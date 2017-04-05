@@ -8,5 +8,5 @@ before_install:
  - sudo apt-get install -qq g++-6 qt58tools qt58svg qt58webengine qt58script
  - sudo update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-6 50
 script:
- - /opt/qt58/bin/qmake BulkClub.pro
+ - /opt/qt58/bin/qmake pamphlet.pro
  - make
