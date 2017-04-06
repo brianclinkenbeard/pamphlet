@@ -17,12 +17,14 @@ class Customer
 {
 public:
     Customer();
-    Customer(QString, Address, Interest, bool);
+    Customer(QString, QString, QString, QString);
+    Customer(QString, Interest, bool);
     Customer(const Customer&);
     void setName(QString);
-    void setAddress(Address);
+    void setAddress(QString, QString, QString, QString);
     void setInterest(Interest);
     void setValue(bool);
+    ~Customer();
 private:
     QString companyName;
     Address address;
