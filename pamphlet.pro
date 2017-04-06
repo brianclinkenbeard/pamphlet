@@ -29,3 +29,6 @@ SOURCES += src/main.cpp \
 HEADERS  += src/mainwindow.h
 
 FORMS    += src/mainwindow.ui
+
+DISTFILES += \
+    pamphletDB.db
