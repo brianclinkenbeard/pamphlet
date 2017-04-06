@@ -1,15 +1,7 @@
 #ifndef CUSTOMER_H
 #define CUSTOMER_H
 
-#include <QString>
-
-struct Address
-{
-    QString street; // (e.g., 2000 Street Name)
-    QString city;
-    QString state;
-    QString zipcode;
-};
+#include "address.h"
 
 enum Interest {HIGH, MEDIUM, LOW};  // Customer's level of interest in our product
 
@@ -17,11 +9,10 @@ class Customer
 {
 public:
     Customer();
-    Customer(QString, QString, QString, QString);
-    Customer(QString, Interest, bool);
+    Customer(QString, Interest, bool, QString, QString, QString, QString);
     Customer(const Customer&);
     void setName(QString);
-    void setAddress(Address);
+    void setCustomerAddress(QString, QString, QString, QString);
     void setInterest(Interest);
     void setValue(bool);
     ~Customer();

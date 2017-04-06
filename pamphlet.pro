@@ -27,11 +27,13 @@ DEFINES += QT_DEPRECATED_WARNINGS
 SOURCES += src/main.cpp \
     src/mainwindow.cpp \
     src/dbmanager.cpp \
-    src/customer.cpp
+    src/customer.cpp \
+    src/address.cpp
 
 HEADERS  += src/mainwindow.h \
     src/dbmanager.h \
-    src/customer.h
+    src/customer.h \
+    src/address.h
 
 FORMS    += src/mainwindow.ui
 

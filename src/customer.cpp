@@ -5,24 +5,22 @@ Customer::Customer()
 
 }
 
-Customer::Customer(QString initStreet, QString initCity, QString initState, QString initZip)
+Customer::Customer(QString name, Interest initInterest, bool initValue, QString initStreet, QString initCity, QString initState, QString initZip) :
+    address(initStreet, initCity, initState, initZip)
 {
-
+    companyName = name;
+    interest = initInterest;
+    value = initValue;
 }
-
-Customer::Customer(QString name, Interest initInterest, bool initValue) :
-    companyName(name),
-    interest(initInterest),
-    value(initValue) {}
 
 void Customer::setName(QString name)
 {
     companyName = name;
 }
 
-void Customer::setAddress(Address initAddress)
+void Customer::setCustomerAddress(QString initStreet, QString initCity, QString initState, QString initZip)
 {
-
+    address.setAddress(initStreet, initCity, initState, initZip);
 }
 
 void Customer::setInterest(Interest initInterest)
