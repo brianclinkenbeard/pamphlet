@@ -12,7 +12,7 @@ public:
     DbManager(const QString& path);
 private:
     QSqlDatabase customer_db;
-    vector<Customer> customers;
+    std::vector<Customer> customers;
 };
 
 #endif // DBMANAGER_H

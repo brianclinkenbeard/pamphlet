@@ -21,7 +21,7 @@ public:
     Customer(QString, Interest, bool);
     Customer(const Customer&);
     void setName(QString);
-    void setAddress(QString, QString, QString, QString);
+    void setAddress(Address);
     void setInterest(Interest);
     void setValue(bool);
     ~Customer();
