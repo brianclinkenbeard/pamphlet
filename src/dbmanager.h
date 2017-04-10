@@ -10,7 +10,9 @@ class DbManager
 {
 public:
     DbManager(const QString& path);
+    static DbManager* getInstance();
 private:
+    static DbManager* db;
     QSqlDatabase customer_db;
     std::vector<Customer> customers;
 };
