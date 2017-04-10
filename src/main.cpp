@@ -8,7 +8,5 @@ int main(int argc, char *argv[])
     MainWindow w;
     w.show();
 
-    DbManager db("pamphletDB.db");  // connect to database
-
     return a.exec();
 }
