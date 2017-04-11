@@ -12,7 +12,7 @@ key
 
 FBI
 1234 Lincoln Ave.
-Washington D.C. 00234
+Washington, D.C. 00234
 somewhat interested
 key
 
@@ -30,7 +30,7 @@ nice to have
 
 Los Angeles Dodgers
 1000 Elysian Park Avenue 
-Los Angeles, CA 9 0012
+Los Angeles, CA 90012
 very interested
 nice to have
 
