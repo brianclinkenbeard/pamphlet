@@ -21,7 +21,7 @@ private slots:
 
 private:
     Ui::MainWindow *ui;
-    Dialog *dialogHelp;
+    DialogHelp *dialogHelp;
 };
 
 #endif // MAINWINDOW_H

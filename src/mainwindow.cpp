@@ -17,6 +17,6 @@ MainWindow::~MainWindow()
 
 void MainWindow::on_actionHelp_triggered()
 {
-    dialogHelp = new Dialog;
+    dialogHelp = new DialogHelp;
     dialogHelp->show();
 }

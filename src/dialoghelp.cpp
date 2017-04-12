@@ -1,24 +1,23 @@
 #include "dialoghelp.h"
-#include "ui_dialog.h"
+#include "ui_dialoghelp.h"
 
-Dialog::Dialog(QWidget *parent) :
+DialogHelp::DialogHelp(QWidget *parent) :
     QDialog(parent),
-    ui(new Ui::Dialog)
+    ui(new Ui::DialogHelp)
 {
     ui->setupUi(this);
 }
 
-Dialog::~Dialog()
+DialogHelp::~DialogHelp()
 {
     delete ui;
 }
 
-void Dialog::on_comboBox_activated(const QString &arg1)
+void DialogHelp::on_comboBox_activated(const QString &arg1)
 {
-    qDebug()<<arg1;
-    if (arg1 == "Service Options"){
-        ui->textBrowser->setText("About Service Option");
-    }else if(arg1 == "Maintenance plan with pricing"){
-        ui->textBrowser->setText("About Maintenace Plan and Pricing");
+    if(arg1 == "Service Options"){
+        ui->textBrowser->setText("About Service Options");
+    }else if(arg1 == "Maitenance with pricing"){
+        ui->textBrowser->setText("About Maitenance and pricing");
     }
 }

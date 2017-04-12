@@ -1,26 +1,25 @@
-#ifndef DIALOG_H
-#define DIALOG_H
+#ifndef DIALOGHELP_H
+#define DIALOGHELP_H
 
 #include <QDialog>
-#include <QDebug>
 
 namespace Ui {
-class Dialog;
+class DialogHelp;
 }
 
-class Dialog : public QDialog
+class DialogHelp : public QDialog
 {
     Q_OBJECT
 
 public:
-    explicit Dialog(QWidget *parent = 0);
-    ~Dialog();
+    explicit DialogHelp(QWidget *parent = 0);
+    ~DialogHelp();
 
 private slots:
     void on_comboBox_activated(const QString &arg1);
 
 private:
-    Ui::Dialog *ui;
+    Ui::DialogHelp *ui;
 };
 
-#endif // DIALOG_H
+#endif // DIALOGHELP_H
