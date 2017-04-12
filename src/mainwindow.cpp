@@ -20,3 +20,9 @@ void MainWindow::on_actionHelp_triggered()
     dialogHelp = new DialogHelp;
     dialogHelp->show();
 }
+
+void MainWindow::on_pushButton_viewMore_clicked()
+{
+    showTestimonials = new Testimonials;
+    showTestimonials->show();
+}

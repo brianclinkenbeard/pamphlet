@@ -279,7 +279,7 @@ p, li { white-space: pre-wrap; }
      </item>
     </layout>
    </widget>
-   <widget class="QPushButton" name="pushButton_2">
+   <widget class="QPushButton" name="pushButton_viewMore">
     <property name="geometry">
      <rect>
       <x>210</x>
