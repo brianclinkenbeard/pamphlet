@@ -20,7 +20,7 @@
    <string>MainWindow</string>
   </property>
   <widget class="QWidget" name="centralWidget">
-   <widget class="QTextBrowser" name="textBrowser">
+   <widget class="QTextBrowser" name="salespitch_browser">
     <property name="geometry">
      <rect>
       <x>21</x>
@@ -51,7 +51,7 @@ p, li { white-space: pre-wrap; }
      <string>Admin Login</string>
     </property>
    </widget>
-   <widget class="QTextBrowser" name="textBrowser_2">
+   <widget class="QTextBrowser" name="testimonials_browser">
     <property name="geometry">
      <rect>
       <x>21</x>
@@ -120,7 +120,7 @@ p, li { white-space: pre-wrap; }
      <set>Qt::AlignCenter</set>
     </property>
    </widget>
-   <widget class="QTextBrowser" name="textBrowser_3">
+   <widget class="QTextBrowser" name="osinfo_browser">
     <property name="geometry">
      <rect>
       <x>470</x>
@@ -130,7 +130,7 @@ p, li { white-space: pre-wrap; }
      </rect>
     </property>
    </widget>
-   <widget class="QWidget" name="">
+   <widget class="QWidget" name="layoutWidget">
     <property name="geometry">
      <rect>
       <x>26</x>
@@ -141,7 +141,7 @@ p, li { white-space: pre-wrap; }
     </property>
     <layout class="QGridLayout" name="gridLayout">
      <item row="0" column="0">
-      <widget class="QLabel" name="label_4">
+      <widget class="QLabel" name="company_label">
        <property name="font">
         <font>
          <pointsize>9</pointsize>
@@ -156,7 +156,7 @@ p, li { white-space: pre-wrap; }
       </widget>
      </item>
      <item row="0" column="1">
-      <widget class="QLabel" name="label_2">
+      <widget class="QLabel" name="contact_label">
        <property name="text">
         <string>Contact Us!</string>
        </property>
@@ -166,7 +166,7 @@ p, li { white-space: pre-wrap; }
       </widget>
      </item>
      <item row="1" column="0">
-      <widget class="QLabel" name="label_5">
+      <widget class="QLabel" name="address_label">
        <property name="font">
         <font>
          <pointsize>9</pointsize>
@@ -181,9 +181,9 @@ p, li { white-space: pre-wrap; }
       </widget>
      </item>
      <item row="1" column="1">
-      <widget class="QLabel" name="label">
+      <widget class="QLabel" name="email_label">
        <property name="text">
-        <string>Email: support@icybersecurity.com</string>
+        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Email: &lt;a href=&quot;mailto:support@icybersecurity.com&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;support@icybersecurity.com&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
        </property>
        <property name="alignment">
         <set>Qt::AlignCenter</set>
@@ -191,7 +191,7 @@ p, li { white-space: pre-wrap; }
       </widget>
      </item>
      <item row="2" column="0">
-      <widget class="QLabel" name="label_6">
+      <widget class="QLabel" name="address2_label">
        <property name="font">
         <font>
          <pointsize>9</pointsize>
@@ -206,7 +206,7 @@ p, li { white-space: pre-wrap; }
       </widget>
      </item>
      <item row="2" column="1">
-      <widget class="QLabel" name="label_3">
+      <widget class="QLabel" name="phone_label">
        <property name="text">
         <string>Phone: 949-696-7314</string>
        </property>
