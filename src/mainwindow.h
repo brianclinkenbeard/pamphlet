@@ -3,7 +3,6 @@
 
 #include <QMainWindow>
 #include "dialoghelp.h"
-#include "testimonials.h"
 
 namespace Ui {
 class MainWindow;
@@ -20,14 +19,11 @@ public:
 private slots:
     void on_actionHelp_triggered();
 
-    void on_pushButton_viewMore_clicked();
-
     void on_comboBox_currentIndexChanged(int index);
 
 private:
     Ui::MainWindow *ui;
     DialogHelp *dialogHelp;
-    Testimonials *showTestimonials;
 };
 
 #endif // MAINWINDOW_H

@@ -22,12 +22,6 @@ void MainWindow::on_actionHelp_triggered()
     dialogHelp->show();
 }
 
-void MainWindow::on_pushButton_viewMore_clicked()
-{
-    showTestimonials = new Testimonials;
-    showTestimonials->show();
-}
-
 void MainWindow::on_comboBox_currentIndexChanged(int index)
 {
     QString osInfo;
