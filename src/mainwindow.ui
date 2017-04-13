@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1024</width>
-    <height>768</height>
+    <width>715</width>
+    <height>670</height>
    </rect>
   </property>
   <property name="sizePolicy">
@@ -83,121 +83,29 @@
   <property name="windowTitle">
    <string>MainWindow</string>
   </property>
+  <property name="styleSheet">
+   <string notr="true"/>
+  </property>
   <widget class="QWidget" name="centralWidget">
-   <widget class="QTextBrowser" name="salespitch_browser">
-    <property name="geometry">
-     <rect>
-      <x>21</x>
-      <y>30</y>
-      <width>421</width>
-      <height>271</height>
-     </rect>
-    </property>
-    <property name="html">
-     <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
-p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'MS Shell Dlg 2'; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Sans Serif'; font-size:14pt;&quot;&gt;iCyberSecurity&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;a name=&quot;lipsum&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'Sans Serif'; font-size:9pt;&quot;&gt;L&lt;/span&gt;&lt;span style=&quot; font-family:'Sans Serif'; font-size:9pt;&quot;&gt;orem ipsum dolor sit amet, consectetur adipiscing elit. Morbi et lorem et magna tincidunt mollis. In tempus mi eget lacus mollis sollicitudin. Vestibulum lobortis neque vitae sapien maximus, et rutrum orci ullamcorper. Donec at blandit erat. Aliquam vitae diam in lectus ultricies pellentesque nec ut arcu. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Praesent in purus ac mauris congue suscipit ac id elit. Sed consectetur in leo sed gravida. Donec eget eros egestas, sodales lacus vel, tempor quam. Pellentesque non est neque. Cras at eleifend augue. Suspendisse potenti. In vitae magna id dui blandit scelerisque. Suspendisse condimentum fringilla tellus, vitae aliquet ligula maximus ut. &lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="pushButton">
-    <property name="geometry">
-     <rect>
-      <x>470</x>
-      <y>700</y>
-      <width>81</width>
-      <height>21</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Admin Login</string>
-    </property>
-   </widget>
-   <widget class="QTextBrowser" name="testimonials_browser">
-    <property name="geometry">
-     <rect>
-      <x>21</x>
-      <y>310</y>
-      <width>421</width>
-      <height>311</height>
-     </rect>
-    </property>
-    <property name="html">
-     <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
-p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'MS Shell Dlg 2'; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Sans Serif'; font-size:14pt;&quot;&gt;Testimonials&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:12px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:1; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Sans Serif'; font-size:16pt;&quot;&gt;&amp;quot;&lt;/span&gt;&lt;span style=&quot; font-family:'Sans Serif'; font-size:9pt;&quot;&gt;If you want high quality security for your company, and general peace of mind, there has never been a more innovative product to appear since iCyberSecurity, the sort of protection they provide you just can't get anywhere else.&lt;/span&gt;&lt;span style=&quot; font-family:'Sans Serif'; font-size:16pt;&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:12px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:1; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Sans Serif'; font-size:9pt;&quot;&gt; &lt;/span&gt;&lt;span style=&quot; font-family:'Sans Serif'; font-size:12pt; font-weight:600;&quot;&gt;- Forbes Magazine&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:12px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:1; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Sans Serif'; font-size:16pt;&quot;&gt;&amp;quot;&lt;/span&gt;&lt;span style=&quot; font-family:'Sans Serif'; font-size:9pt;&quot;&gt;iCyberSecurity is #1 in the industry when it comes to providing the quickest and most effective means of preventing cyber attacks. The innovative technology embedded in their algorithms leaves our company feeling secure so we can focus on the task at hand.&lt;/span&gt;&lt;span style=&quot; font-family:'Sans Serif'; font-size:16pt;&quot;&gt;&amp;quot;&lt;/span&gt;&lt;span style=&quot; font-family:'Sans Serif'; font-size:9pt;&quot;&gt; &lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:12px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:1; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Sans Serif'; font-size:12pt; font-weight:600;&quot;&gt;- Google&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-    </property>
-   </widget>
-   <widget class="QComboBox" name="comboBox">
-    <property name="geometry">
-     <rect>
-      <x>680</x>
-      <y>70</y>
-      <width>111</width>
-      <height>31</height>
-     </rect>
-    </property>
-    <item>
-     <property name="text">
-      <string/>
-     </property>
-    </item>
-    <item>
-     <property name="text">
-      <string>Windows</string>
-     </property>
-    </item>
-    <item>
-     <property name="text">
-      <string>macOS</string>
-     </property>
-    </item>
-    <item>
-     <property name="text">
-      <string>GNU/Linux</string>
-     </property>
-    </item>
-   </widget>
-   <widget class="QLabel" name="label_7">
-    <property name="geometry">
-     <rect>
-      <x>470</x>
-      <y>40</y>
-      <width>531</width>
-      <height>20</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Select an operating system to explore security opportunities we offer:</string>
-    </property>
-    <property name="alignment">
-     <set>Qt::AlignCenter</set>
-    </property>
-   </widget>
    <widget class="QTextBrowser" name="osinfo_browser">
     <property name="geometry">
      <rect>
-      <x>470</x>
-      <y>110</y>
-      <width>531</width>
-      <height>51</height>
+      <x>440</x>
+      <y>70</y>
+      <width>251</width>
+      <height>151</height>
      </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(255, 255, 255);</string>
     </property>
    </widget>
    <widget class="QWidget" name="layoutWidget">
     <property name="geometry">
      <rect>
-      <x>26</x>
-      <y>630</y>
-      <width>971</width>
+      <x>20</x>
+      <y>550</y>
+      <width>401</width>
       <height>71</height>
      </rect>
     </property>
@@ -208,6 +116,9 @@ p, li { white-space: pre-wrap; }
         <font>
          <pointsize>9</pointsize>
         </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: rgb(188, 217, 255);</string>
        </property>
        <property name="text">
         <string>iCyberSecurity Incorporated</string>
@@ -224,6 +135,9 @@ p, li { white-space: pre-wrap; }
          <pointsize>9</pointsize>
         </font>
        </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: rgb(188, 217, 255);</string>
+       </property>
        <property name="text">
         <string>Contact Us!</string>
        </property>
@@ -238,6 +152,9 @@ p, li { white-space: pre-wrap; }
         <font>
          <pointsize>9</pointsize>
         </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: rgb(188, 217, 255);</string>
        </property>
        <property name="text">
         <string>2800 Marguerite Parkway</string>
@@ -254,6 +171,9 @@ p, li { white-space: pre-wrap; }
          <pointsize>9</pointsize>
         </font>
        </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: rgb(188, 217, 255);</string>
+       </property>
        <property name="text">
         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Email: &lt;a href=&quot;mailto:support@icybersecurity.com&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;support@icybersecurity.com&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
        </property>
@@ -268,6 +188,9 @@ p, li { white-space: pre-wrap; }
         <font>
          <pointsize>9</pointsize>
         </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: rgb(188, 217, 255);</string>
        </property>
        <property name="text">
         <string>Mission Viejo, California 92692</string>
@@ -284,6 +207,9 @@ p, li { white-space: pre-wrap; }
          <pointsize>9</pointsize>
         </font>
        </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: rgb(188, 217, 255);</string>
+       </property>
        <property name="text">
         <string>Phone: 949-696-7314</string>
        </property>
@@ -294,26 +220,351 @@ p, li { white-space: pre-wrap; }
      </item>
     </layout>
    </widget>
-   <widget class="QPushButton" name="pushButton_viewMore">
+   <widget class="QToolBox" name="toolBox">
     <property name="geometry">
      <rect>
-      <x>210</x>
-      <y>582</y>
-      <width>91</width>
-      <height>31</height>
+      <x>20</x>
+      <y>20</y>
+      <width>401</width>
+      <height>521</height>
      </rect>
     </property>
-    <property name="text">
-     <string>View More</string>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(188, 217, 255);</string>
     </property>
+    <property name="currentIndex">
+     <number>0</number>
+    </property>
+    <widget class="QWidget" name="page">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>0</y>
+       <width>401</width>
+       <height>467</height>
+      </rect>
+     </property>
+     <attribute name="label">
+      <string>Testimonials</string>
+     </attribute>
+     <widget class="QTextBrowser" name="testimonials_browser">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>20</y>
+        <width>331</width>
+        <height>361</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(255, 255, 255);</string>
+      </property>
+      <property name="html">
+       <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'MS Shell Dlg 2'; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Sans Serif'; font-size:14pt;&quot;&gt;Testimonials&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:1; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Sans Serif'; font-size:16pt;&quot;&gt;&amp;quot;&lt;/span&gt;&lt;span style=&quot; font-family:'Sans Serif'; font-size:9pt;&quot;&gt;If you want high quality security for your company, and general peace of mind, there has never been a more innovative product to appear since iCyberSecurity, the sort of protection they provide you just can't get anywhere else.&lt;/span&gt;&lt;span style=&quot; font-family:'Sans Serif'; font-size:16pt;&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:1; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Sans Serif'; font-size:9pt;&quot;&gt; &lt;/span&gt;&lt;span style=&quot; font-family:'Sans Serif'; font-size:12pt; font-weight:600;&quot;&gt;- Forbes Magazine&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:1; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Sans Serif'; font-size:16pt;&quot;&gt;&amp;quot;&lt;/span&gt;&lt;span style=&quot; font-family:'Sans Serif'; font-size:9pt;&quot;&gt;iCyberSecurity is #1 in the industry when it comes to providing the quickest and most effective means of preventing cyber attacks. The innovative technology embedded in their algorithms leaves our company feeling secure so we can focus on the task at hand.&lt;/span&gt;&lt;span style=&quot; font-family:'Sans Serif'; font-size:16pt;&quot;&gt;&amp;quot;&lt;/span&gt;&lt;span style=&quot; font-family:'Sans Serif'; font-size:9pt;&quot;&gt; &lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:1; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Sans Serif'; font-size:12pt; font-weight:600;&quot;&gt;- Google&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pushButton_viewMore">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>390</y>
+        <width>331</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(255, 255, 255);</string>
+      </property>
+      <property name="text">
+       <string>View More</string>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="page_2">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>0</y>
+       <width>401</width>
+       <height>467</height>
+      </rect>
+     </property>
+     <attribute name="label">
+      <string>About Us</string>
+     </attribute>
+     <widget class="QTextBrowser" name="salespitch_browser">
+      <property name="geometry">
+       <rect>
+        <x>30</x>
+        <y>30</y>
+        <width>341</width>
+        <height>401</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(255, 255, 255);</string>
+      </property>
+      <property name="html">
+       <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'MS Shell Dlg 2'; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Sans Serif'; font-size:12pt;&quot;&gt;iCyberSecurity&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:'Sans Serif'; font-size:12pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;a name=&quot;lipsum&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'Sans Serif'; font-size:9pt;&quot;&gt;L&lt;/span&gt;&lt;span style=&quot; font-family:'Sans Serif'; font-size:9pt;&quot;&gt;orem ipsum dolor sit amet, consectetur adipiscing elit. Morbi et lorem et magna tincidunt mollis. In tempus mi eget lacus mollis sollicitudin. Vestibulum lobortis neque vitae sapien maximus, et rutrum orci ullamcorper. Donec at blandit erat. Aliquam vitae diam in lectus ultricies pellentesque nec ut arcu. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Praesent in purus ac mauris congue suscipit ac id elit. Sed consectetur in leo sed gravida. Donec eget eros egestas, sodales lacus vel, tempor quam. Pellentesque non est neque. Cras at eleifend augue. Suspendisse potenti. In vitae magna id dui blandit scelerisque. Suspendisse condimentum fringilla tellus, vitae aliquet ligula maximus ut. &lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </property>
+     </widget>
+     <widget class="QGroupBox" name="groupBox">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>0</y>
+        <width>361</width>
+        <height>441</height>
+       </rect>
+      </property>
+      <property name="title">
+       <string>About US</string>
+      </property>
+     </widget>
+     <zorder>groupBox</zorder>
+     <zorder>salespitch_browser</zorder>
+    </widget>
    </widget>
+   <widget class="QGroupBox" name="groupBox_2">
+    <property name="geometry">
+     <rect>
+      <x>430</x>
+      <y>20</y>
+      <width>271</width>
+      <height>211</height>
+     </rect>
+    </property>
+    <property name="title">
+     <string>Learn About Our Products</string>
+    </property>
+    <widget class="QLabel" name="label_7">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>20</y>
+       <width>151</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Select an operating system </string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+    </widget>
+    <widget class="QComboBox" name="comboBox">
+     <property name="geometry">
+      <rect>
+       <x>150</x>
+       <y>20</y>
+       <width>111</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <item>
+      <property name="text">
+       <string/>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Windows</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>macOS</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>GNU/Linux</string>
+      </property>
+     </item>
+    </widget>
+   </widget>
+   <widget class="QGroupBox" name="groupBox_3">
+    <property name="geometry">
+     <rect>
+      <x>430</x>
+      <y>240</y>
+      <width>271</width>
+      <height>301</height>
+     </rect>
+    </property>
+    <property name="title">
+     <string>Customer Orders</string>
+    </property>
+    <widget class="QLabel" name="label_CustomerName">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>70</y>
+       <width>91</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Enter Your Name</string>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="lineEdit_CustomerName">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>90</y>
+       <width>231</width>
+       <height>20</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_OperatingSystem">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>20</y>
+       <width>121</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Select operating system</string>
+     </property>
+    </widget>
+    <widget class="QComboBox" name="comboBox_2">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>40</y>
+       <width>231</width>
+       <height>22</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_SelectProduct">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>120</y>
+       <width>161</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Select the products from the list</string>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="lineEdit">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>140</y>
+       <width>231</width>
+       <height>20</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="QListWidget" name="listWidget">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>190</y>
+       <width>231</width>
+       <height>71</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgb(255, 255, 255);</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>170</y>
+       <width>141</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>List of your chosen products</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="pushButton_2">
+     <property name="geometry">
+      <rect>
+       <x>100</x>
+       <y>270</y>
+       <width>75</width>
+       <height>23</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Purchase</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QGroupBox" name="groupBox_4">
+    <property name="geometry">
+     <rect>
+      <x>610</x>
+      <y>550</y>
+      <width>91</width>
+      <height>71</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(188, 217, 255);</string>
+    </property>
+    <property name="title">
+     <string>Administrator</string>
+    </property>
+    <widget class="QPushButton" name="pushButton">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>20</y>
+       <width>71</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgb(255, 255, 255);</string>
+     </property>
+     <property name="text">
+      <string>Admin Login</string>
+     </property>
+    </widget>
+   </widget>
+   <zorder>groupBox_4</zorder>
+   <zorder>groupBox_2</zorder>
+   <zorder>toolBox</zorder>
+   <zorder>osinfo_browser</zorder>
+   <zorder>layoutWidget</zorder>
+   <zorder>groupBox_3</zorder>
   </widget>
   <widget class="QMenuBar" name="menuBar">
    <property name="geometry">
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1024</width>
+     <width>715</width>
      <height>21</height>
     </rect>
    </property>
@@ -323,12 +574,24 @@ p, li { white-space: pre-wrap; }
     </property>
     <addaction name="actionHelp"/>
    </widget>
+   <widget class="QMenu" name="menuAdministrator">
+    <property name="title">
+     <string>Administrator</string>
+    </property>
+    <addaction name="actionLog_In"/>
+   </widget>
    <addaction name="menuHelp"/>
+   <addaction name="menuAdministrator"/>
   </widget>
   <widget class="QStatusBar" name="statusBar"/>
   <action name="actionHelp">
    <property name="text">
     <string>Help</string>
+   </property>
+  </action>
+  <action name="actionLog_In">
+   <property name="text">
+    <string>Log In</string>
    </property>
   </action>
  </widget>
