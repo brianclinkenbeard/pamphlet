@@ -1,6 +1,7 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
-
+#include "dialoghelp.h"
+#include "adminlogin.h"
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -18,8 +19,8 @@ MainWindow::~MainWindow()
 
 void MainWindow::on_actionHelp_triggered()
 {
-    dialogHelp = new DialogHelp;
-    dialogHelp->show();
+    DialogHelp *helpWindow = new DialogHelp;
+    helpWindow->show();
 }
 
 void MainWindow::on_comboBox_currentIndexChanged(int index)
@@ -40,4 +41,11 @@ void MainWindow::on_comboBox_currentIndexChanged(int index)
         break;
     }
     ui->osinfo_browser->setText(osInfo);
+}
+
+void MainWindow::on_loginButton_clicked()
+{
+    AdminLogin *loginWindow = new AdminLogin;
+    loginWindow->show();
+    this->close();
 }

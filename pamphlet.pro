@@ -29,16 +29,19 @@ SOURCES += src/main.cpp \
     src/dbmanager.cpp \
     src/customer.cpp \
     src/address.cpp \
-    src/dialoghelp.cpp
+    src/dialoghelp.cpp \
+    src/adminlogin.cpp
 
 HEADERS  += src/mainwindow.h \
     src/dbmanager.h \
     src/customer.h \
     src/address.h \
-    src/dialoghelp.h
+    src/dialoghelp.h \
+    src/adminlogin.h
 
 FORMS    += src/mainwindow.ui \
-    src/dialoghelp.ui
+    src/dialoghelp.ui \
+    src/adminlogin.ui
 
 DISTFILES += \
     pamphletDB.db

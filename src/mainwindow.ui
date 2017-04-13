@@ -101,7 +101,7 @@ p, li { white-space: pre-wrap; }
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;a name=&quot;lipsum&quot;&gt;&lt;/a&gt;For nearly 15 years iCyberSecurity has led the way in bringing quality security to Windows, macOS, and GNU/Linux. Our cutting edge technology and experienced experts work tirelessly to keep your data 100% secure. Our system has been proven to detect, respond to, and most of all contain advanced cyber security attacks using top-of-the-line methodologies. iCyberSecurity has been trusted by companies such as Microsoft, Google, and IBM to provide comprehensive security solutions.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton">
+   <widget class="QPushButton" name="loginButton">
     <property name="geometry">
      <rect>
       <x>890</x>
@@ -285,7 +285,7 @@ p, li { white-space: pre-wrap; }
      </item>
     </layout>
    </widget>
-   <widget class="QLabel" name="label_4">
+   <widget class="QLabel" name="icyber_label">
     <property name="geometry">
      <rect>
       <x>20</x>
@@ -306,7 +306,7 @@ p, li { white-space: pre-wrap; }
      <string>Why Choose iCyberSecurity?</string>
     </property>
    </widget>
-   <widget class="QLabel" name="label_5">
+   <widget class="QLabel" name="testimonials_label">
     <property name="geometry">
      <rect>
       <x>20</x>

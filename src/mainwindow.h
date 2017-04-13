@@ -2,7 +2,6 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
-#include "dialoghelp.h"
 
 namespace Ui {
 class MainWindow;
@@ -21,9 +20,10 @@ private slots:
 
     void on_comboBox_currentIndexChanged(int index);
 
+    void on_loginButton_clicked();
+
 private:
     Ui::MainWindow *ui;
-    DialogHelp *dialogHelp;
 };
 
 #endif // MAINWINDOW_H
