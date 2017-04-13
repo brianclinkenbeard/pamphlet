@@ -7,7 +7,7 @@ int main(int argc, char *argv[])
     QApplication a(argc, argv);
     MainWindow w;
     w.show();
-    DbManager::getInstance()->FileToDb("customerData.txt");
+    DbManager::getInstance()->FileToDb(":/res/customerData.txt");
 
     return a.exec();
 }

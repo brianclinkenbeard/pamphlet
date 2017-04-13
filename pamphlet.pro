@@ -41,5 +41,7 @@ FORMS    += src/mainwindow.ui \
     src/dialoghelp.ui
 
 DISTFILES += \
-    pamphletDB.db \
-    customerData.txt
+    pamphletDB.db
+
+RESOURCES += \
+    res.qrc

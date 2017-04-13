@@ -1,0 +1,5 @@
+<RCC>
+    <qresource prefix="/res">
+        <file>customerData.txt</file>
+    </qresource>
+</RCC>
