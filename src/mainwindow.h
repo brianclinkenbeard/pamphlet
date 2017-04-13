@@ -22,6 +22,8 @@ private slots:
 
     void on_pushButton_viewMore_clicked();
 
+    void on_comboBox_currentIndexChanged(int index);
+
 private:
     Ui::MainWindow *ui;
     DialogHelp *dialogHelp;

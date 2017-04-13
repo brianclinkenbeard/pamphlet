@@ -16,7 +16,7 @@ public:
     ~DialogHelp();
 
 private slots:
-    void on_comboBox_activated(const QString &arg1);
+    void on_comboBox_currentIndexChanged(int index);
 
 private:
     Ui::DialogHelp *ui;

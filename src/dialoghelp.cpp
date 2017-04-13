@@ -6,6 +6,7 @@ DialogHelp::DialogHelp(QWidget *parent) :
     ui(new Ui::DialogHelp)
 {
     ui->setupUi(this);
+    ui->textBrowser->setText("Please select an option in the context menu to view help.");
 }
 
 DialogHelp::~DialogHelp()
@@ -13,11 +14,20 @@ DialogHelp::~DialogHelp()
     delete ui;
 }
 
-void DialogHelp::on_comboBox_activated(const QString &arg1)
+void DialogHelp::on_comboBox_currentIndexChanged(int index)
 {
-    if(arg1 == "Service Options"){
-        ui->textBrowser->setText("About Service Options");
-    }else if(arg1 == "Maitenance with pricing"){
-        ui->textBrowser->setText("About Maitenance and pricing");
+    QString helpInfo;
+    /* TODO: add help information */
+    switch (index) {
+    case 0:
+        helpInfo = "Please select an option in the context menu to view help.";
+        break;
+    case 1:
+        helpInfo = "[Service Options Help]";
+        break;
+    case 2:
+        helpInfo = "[Maintenance and Pricing Help]";
+        break;
     }
+    ui->textBrowser->setText(helpInfo);
 }
