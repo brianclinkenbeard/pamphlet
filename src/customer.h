@@ -15,6 +15,10 @@ public:
     void setCustomerAddress(QString, QString, QString, QString);
     void setInterest(Interest);
     void setValue(bool);
+    QString getName();
+    Address getCustomerAddress();
+    Interest getInterest();
+    bool getValue();
     ~Customer();
 private:
     QString companyName;

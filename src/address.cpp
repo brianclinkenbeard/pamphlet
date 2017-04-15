@@ -38,6 +38,25 @@ void Address::setZip(QString initZip)
 {
     zipcode = initZip;
 }
+QString Address::getStreet()
+{
+    return street;
+}
+
+QString Address::getCity()
+{
+    return city;
+}
+
+QString Address::getState()
+{
+    return state;
+}
+
+QString Address::getZip()
+{
+    return zipcode;
+}
 
 Address::~Address()
 {

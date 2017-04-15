@@ -32,6 +32,25 @@ void Customer::setValue(bool initValue)
 {
     value = initValue;
 }
+QString Customer::getName()
+{
+    return companyName;
+}
+
+Address Customer::getCustomerAddress()
+{
+    return address;
+}
+
+Interest Customer::getInterest()
+{
+    return interest;
+}
+
+bool Customer::getValue()
+{
+    return value;
+}
 
 Customer::~Customer()
 {

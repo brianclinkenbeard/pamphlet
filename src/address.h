@@ -13,6 +13,10 @@ public:
     void setCity(QString);
     void setState(QString);
     void setZip(QString);
+    QString getStreet();
+    QString getCity();
+    QString getState();
+    QString getZip();
     ~Address();
 private:
     QString street; // (e.g., 2000 Street Name)
