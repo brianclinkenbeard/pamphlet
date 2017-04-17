@@ -4,6 +4,13 @@ Customer::Customer()
 {
 
 }
+Customer::Customer(const Customer & otherCustomer)
+{
+    companyName = otherCustomer.companyName;
+    interest = otherCustomer.interest;
+    value = otherCustomer.value;
+    address = otherCustomer.address;
+}
 
 Customer::Customer(QString name, Interest initInterest, bool initValue, QString initStreet, QString initCity, QString initState, QString initZip) :
     address(initStreet, initCity, initState, initZip)
@@ -28,7 +35,7 @@ void Customer::setInterest(Interest initInterest)
     interest = initInterest;
 }
 
-void Customer::setValue(bool initValue)
+void Customer::setValue(int initValue)
 {
     value = initValue;
 }
@@ -47,7 +54,7 @@ Interest Customer::getInterest()
     return interest;
 }
 
-bool Customer::getValue()
+int Customer::getValue()
 {
     return value;
 }

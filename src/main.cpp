@@ -8,6 +8,7 @@ int main(int argc, char *argv[])
     MainWindow w;
     w.show();
     DbManager::getInstance()->FileToDb(":/res/customerData.txt");
+    DbManager::getInstance()->DbToCustomers();
 
     return a.exec();
 }

@@ -14,17 +14,17 @@ public:
     void setName(QString);
     void setCustomerAddress(QString, QString, QString, QString);
     void setInterest(Interest);
-    void setValue(bool);
+    void setValue(int);
     QString getName();
     Address getCustomerAddress();
     Interest getInterest();
-    bool getValue();
+    int getValue();
     ~Customer();
 private:
     QString companyName;
     Address address;
     Interest interest;
-    bool value; // if true "key", if false "nice to have"
+    int value; // if 1 "key", if 0 "nice to have"
 };
 
 #endif // CUSTOMER_H

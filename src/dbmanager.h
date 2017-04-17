@@ -12,6 +12,8 @@ class DbManager
 public:
     static DbManager* getInstance();
     void FileToDb(const QString& path);
+    void DbToCustomers();
+
 private:
 
     static DbManager* db;
