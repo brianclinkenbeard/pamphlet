@@ -63,49 +63,7 @@
     <set>Qt::AlignCenter</set>
    </property>
    <property name="placeholderText">
-    <string>Enter Admin Username</string>
-   </property>
-  </widget>
-  <widget class="QLabel" name="username_label">
-   <property name="geometry">
-    <rect>
-     <x>3</x>
-     <y>80</y>
-     <width>491</width>
-     <height>21</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <pointsize>9</pointsize>
-    </font>
-   </property>
-   <property name="text">
     <string>Username</string>
-   </property>
-   <property name="alignment">
-    <set>Qt::AlignCenter</set>
-   </property>
-  </widget>
-  <widget class="QLabel" name="password_label">
-   <property name="geometry">
-    <rect>
-     <x>0</x>
-     <y>160</y>
-     <width>501</width>
-     <height>21</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <pointsize>9</pointsize>
-    </font>
-   </property>
-   <property name="text">
-    <string>Password</string>
-   </property>
-   <property name="alignment">
-    <set>Qt::AlignCenter</set>
    </property>
   </widget>
   <widget class="QLineEdit" name="password_edit">
@@ -124,7 +82,7 @@
     <set>Qt::AlignCenter</set>
    </property>
    <property name="placeholderText">
-    <string>Enter Admin Password</string>
+    <string>Password</string>
    </property>
   </widget>
   <widget class="QLabel" name="error_label">
