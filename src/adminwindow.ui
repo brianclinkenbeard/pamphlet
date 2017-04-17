@@ -26,6 +26,32 @@
     <string>Logout</string>
    </property>
   </widget>
+  <widget class="QWidget" name="">
+   <property name="geometry">
+    <rect>
+     <x>420</x>
+     <y>220</y>
+     <width>211</width>
+     <height>161</height>
+    </rect>
+   </property>
+   <layout class="QVBoxLayout" name="verticalLayout">
+    <item>
+     <widget class="QPushButton" name="pushButton_2">
+      <property name="text">
+       <string>PushButton</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QPushButton" name="pushButton_3">
+      <property name="text">
+       <string>PushButton</string>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
  </widget>
  <resources/>
  <connections/>
