@@ -3,7 +3,7 @@
 
 #include "address.h"
 
-enum Interest {HIGH, MEDIUM, LOW};  // Customer's level of interest in our product
+enum Interest {LOW=0, MEDIUM, HIGH};  // Customer's level of interest in our product
 
 class Customer
 {
@@ -14,6 +14,7 @@ public:
     void setName(QString);
     void setCustomerAddress(QString, QString, QString, QString);
     void setInterest(Interest);
+    void setInterest(QString);
     void setValue(int);
     QString getName();
     Address getCustomerAddress();
