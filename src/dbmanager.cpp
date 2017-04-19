@@ -34,6 +34,7 @@ void DbManager::FileToDb(const QString& path)
     QString state;
     QString zip;//TEXT in the table for starting zero(s), can be changed to integer
     int value;
+    QString rate;
 
     QFile inFile(path);
     if(!inFile.open(QFile::ReadOnly | QFile::Text)){
@@ -59,22 +60,28 @@ void DbManager::FileToDb(const QString& path)
         }
         in.operator >>(state);
         in.operator >>(zip);
-        in.readLine();
-        in.readLine();
+        in.readLine();//reads \n
+        rate = in.readLine();
         if(in.readLine().toLower()=="key"){
             value = 1;
         }else{
             value = 0;
         }
-        in.readLine();
+        in.readLine();//reads the empty line
 
         qry.prepare("insert into Customer_Info (Company,Street_Address,City,State,Zip,Value) values('"+company+"','"+streetAddress+"','"+city+"','"+ state+"','"+zip+"','"+QString::number(value)+"')");
-     //    qry.prepare("insert into CustomerInfo (Street) values('"+streetAddress+"')");
         if(qry.exec()){
-            qDebug()<<"data saved to data base";
+            qDebug()<<"data saved to Customer_Info";
         }
         else{
-            qDebug()<<"unable to execute query";
+            qDebug()<<"unable to save data to Customer_Info";
+        }
+        qry.prepare("insert into Customer_Rating (Company,Interest) values('"+company+"','"+rate+"')");
+        if(qry.exec()){
+            qDebug()<<"data saved to Customer_Rating";
+        }
+        else{
+            qDebug()<<"unable to save data to Customer_Rating";
         }
 
     }
@@ -85,15 +92,13 @@ void DbManager::FileToDb(const QString& path)
 
 void DbManager::DbToCustomers()
 {
-    QString company;
     Customer customer;
     Customer tempCustomer;
     QSqlQuery qry;
+    QSqlQuery qry2;
     qry.prepare("SELECT * FROM Customer_Info");
-    if(qry.exec()){
-        qDebug()<<"able to execute query";
-    }
-    else{
+
+    if(!qry.exec()){
         qDebug()<<"unable to execute query";
     }
     int i = 0;
@@ -102,7 +107,12 @@ void DbManager::DbToCustomers()
         customer.setName(qry.value(0).toString());
         customer.setCustomerAddress(qry.value(1).toString(), qry.value(2).toString(), qry.value(3).toString(), qry.value(4).toString());
         customer.setValue(qry.value(5).toInt());
-        //customer.setInterest(qry.value().toString());
+        qry2.prepare("SELECT Interest FROM Customer_Rating WHERE Company = '"+customer.getName()+"'");//to find and select value
+        if(!qry2.exec()){
+            qDebug()<<"unable to execute query";
+        }
+        if(qry2.next())//to get the value out of query
+            customer.setInterest(qry2.value(0).toString());
         customers.push_back(customer);
         tempCustomer = customers.at(i);
         qDebug()<<tempCustomer.getName();
@@ -110,8 +120,8 @@ void DbManager::DbToCustomers()
         qDebug()<<tempCustomer.getCustomerAddress().getStreet();
         qDebug()<<tempCustomer.getCustomerAddress().getState();
         qDebug()<<tempCustomer.getCustomerAddress().getZip();
-        qDebug()<<QString::number(tempCustomer.getValue());
+        qDebug()<<"key: "<<QString::number(tempCustomer.getValue());
+        qDebug()<<"interest: "<<QString::number(tempCustomer.getInterest());
         i++;
     }
-
 }

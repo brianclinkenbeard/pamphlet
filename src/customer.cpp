@@ -2,7 +2,7 @@
 
 Customer::Customer()
 {
-
+    interest = LOW;
 }
 Customer::Customer(const Customer & otherCustomer)
 {
@@ -33,6 +33,19 @@ void Customer::setCustomerAddress(QString initStreet, QString initCity, QString 
 void Customer::setInterest(Interest initInterest)
 {
     interest = initInterest;
+}
+
+void Customer::setInterest(QString initInterest)
+{
+    if(initInterest == "very interested"){
+        interest = HIGH;
+    }
+    else if("somewhat interested" == initInterest){
+        interest = MEDIUM;
+    }
+    else if(initInterest == "not interested"){
+        interest = LOW;
+    }
 }
 
 void Customer::setValue(int initValue)

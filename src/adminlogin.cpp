@@ -1,6 +1,7 @@
 #include "adminlogin.h"
 #include "ui_adminlogin.h"
 #include "mainwindow.h"
+#include "adminwindow.h"
 
 AdminLogin::AdminLogin(QWidget *parent) :
     QWidget(parent),
@@ -24,6 +25,8 @@ void AdminLogin::on_password_edit_returnPressed()
        /* TODO: admin option window */
        ui->error_label->setStyleSheet("color:green"); // temporary
        ui->error_label->setText("Success"); // temporary because success label will be replaced opening option window
+        AdminWindow *adminWindow = new AdminWindow;
+        adminWindow->show();
    } else {
        ui->error_label->setStyleSheet("color:red"); // temporary because label is red by default
        ui->error_label->setText("Incorrect Login");
