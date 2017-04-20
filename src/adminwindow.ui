@@ -26,13 +26,13 @@
     <string>Logout</string>
    </property>
   </widget>
-  <widget class="QWidget" name="">
+  <widget class="QWidget" name="layoutWidget">
    <property name="geometry">
     <rect>
-     <x>420</x>
-     <y>220</y>
-     <width>211</width>
-     <height>161</height>
+     <x>870</x>
+     <y>130</y>
+     <width>131</width>
+     <height>121</height>
     </rect>
    </property>
    <layout class="QVBoxLayout" name="verticalLayout">
@@ -51,6 +51,35 @@
      </widget>
     </item>
    </layout>
+  </widget>
+  <widget class="QTableWidget" name="tableWidget_CustomerInfo">
+   <property name="geometry">
+    <rect>
+     <x>50</x>
+     <y>60</y>
+     <width>791</width>
+     <height>541</height>
+    </rect>
+   </property>
+   <attribute name="horizontalHeaderDefaultSectionSize">
+    <number>150</number>
+   </attribute>
+   <attribute name="horizontalHeaderMinimumSectionSize">
+    <number>37</number>
+   </attribute>
+  </widget>
+  <widget class="QPushButton" name="pushButton_4">
+   <property name="geometry">
+    <rect>
+     <x>340</x>
+     <y>20</y>
+     <width>75</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Display Info</string>
+   </property>
   </widget>
  </widget>
  <resources/>

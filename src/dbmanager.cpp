@@ -125,3 +125,8 @@ void DbManager::DbToCustomers()
         i++;
     }
 }
+
+std::vector<Customer> DbManager::getCustomers()
+{
+    return customers;
+}
