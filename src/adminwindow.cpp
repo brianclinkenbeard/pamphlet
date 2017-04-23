@@ -11,8 +11,6 @@ AdminWindow::AdminWindow(QWidget *parent) :
     /* headers */
     QStringList headerTitles;
     headerTitles<<"Company"<<"Street Address"<<"City"<<"State"<<"Zip Code"<<"Key Customer"<<"Customer Rate";
-    qDebug() << "Size: ";
-    qDebug() << headerTitles.size();
     ui->tableWidget_CustomerInfo->setColumnCount(headerTitles.size());
     ui->tableWidget_CustomerInfo->setHorizontalHeaderLabels(headerTitles);
 
