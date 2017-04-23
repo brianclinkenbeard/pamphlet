@@ -13,7 +13,7 @@
   <property name="windowTitle">
    <string>Form</string>
   </property>
-  <widget class="QPushButton" name="pushButton">
+  <widget class="QPushButton" name="logoutButton">
    <property name="geometry">
     <rect>
      <x>870</x>
@@ -37,9 +37,9 @@
    </property>
    <layout class="QVBoxLayout" name="verticalLayout">
     <item>
-     <widget class="QPushButton" name="pushButton_2">
+     <widget class="QPushButton" name="displayInfoButton">
       <property name="text">
-       <string>PushButton</string>
+       <string>Display Info</string>
       </property>
      </widget>
     </item>
@@ -67,19 +67,6 @@
    <attribute name="horizontalHeaderMinimumSectionSize">
     <number>37</number>
    </attribute>
-  </widget>
-  <widget class="QPushButton" name="pushButton_4">
-   <property name="geometry">
-    <rect>
-     <x>340</x>
-     <y>20</y>
-     <width>75</width>
-     <height>23</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>Display Info</string>
-   </property>
   </widget>
  </widget>
  <resources/>

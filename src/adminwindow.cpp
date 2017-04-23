@@ -1,11 +1,21 @@
 #include "adminwindow.h"
 #include "ui_adminwindow.h"
+#include "mainwindow.h"
 
 AdminWindow::AdminWindow(QWidget *parent) :
     QWidget(parent),
     ui(new Ui::AdminWindow)
 {
     ui->setupUi(this);
+
+    QStringList headerTitles;
+    headerTitles<<"Company"<<"Street Address"<<"City"<<"State"<<"Zip Code"<<"Key Customer"<<"Customer Rate";
+    qDebug() << "Size: ";
+    qDebug() << headerTitles.size();
+    ui->tableWidget_CustomerInfo->setColumnCount(headerTitles.size());
+    ui->tableWidget_CustomerInfo->setHorizontalHeaderLabels(headerTitles);
+
+    on_displayInfoButton_clicked();
 }
 
 AdminWindow::~AdminWindow()
@@ -13,19 +23,16 @@ AdminWindow::~AdminWindow()
     delete ui;
 }
 
-void AdminWindow::on_pushButton_4_clicked()
+void AdminWindow::on_displayInfoButton_clicked()
 {
     std::vector<Customer> customers = DbManager::getInstance()->getCustomers();
     QString keyCustomer;
-    QStringList headerTitles;
-    headerTitles<<"Company"<<"Street Address"<<"City"<<"State"<<"Zip Code"<<"Key Customer"<<"Customer Rate";
+
     int rows = customers.size();
-    int columns = 7;
     ui->tableWidget_CustomerInfo->setRowCount(rows);
-    ui->tableWidget_CustomerInfo->setColumnCount(columns);
-    ui->tableWidget_CustomerInfo->setHorizontalHeaderLabels(headerTitles);
-    for(int i =0; i<customers.size();i++)
-    {
+
+
+    for (unsigned int i = 0; i < customers.size(); ++i) {
         keyCustomer = "Not Key";
         ui->tableWidget_CustomerInfo->setItem(i, 0, new QTableWidgetItem(customers[i].getName()));
         ui->tableWidget_CustomerInfo->setItem(i, 1, new QTableWidgetItem(customers[i].getCustomerAddress().getStreet()));
@@ -38,4 +45,11 @@ void AdminWindow::on_pushButton_4_clicked()
         ui->tableWidget_CustomerInfo->setItem(i, 5, new QTableWidgetItem(keyCustomer));
         ui->tableWidget_CustomerInfo->setItem(i, 6, new QTableWidgetItem(QString::number(customers[i].getInterest())));
     }
+}
+
+void AdminWindow::on_logoutButton_clicked()
+{
+   MainWindow *main = new MainWindow;
+   main->show();
+   this->close();
 }

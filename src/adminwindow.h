@@ -17,7 +17,9 @@ public:
     ~AdminWindow();
 
 private slots:
-    void on_pushButton_4_clicked();
+    void on_displayInfoButton_clicked();
+
+    void on_logoutButton_clicked();
 
 private:
     Ui::AdminWindow *ui;

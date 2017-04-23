@@ -22,13 +22,10 @@ void AdminLogin::on_password_edit_returnPressed()
    const QString ADMIN_PASSWORD = "A";
 
    if (ui->username_edit->text() == ADMIN_USERNAME && ui->password_edit->text() == ADMIN_PASSWORD) {
-       /* TODO: admin option window */
-       ui->error_label->setStyleSheet("color:green"); // temporary
-       ui->error_label->setText("Success"); // temporary because success label will be replaced opening option window
-        AdminWindow *adminWindow = new AdminWindow;
-        adminWindow->show();
+       AdminWindow *adminWindow = new AdminWindow;
+       adminWindow->show();
+       this->close();
    } else {
-       ui->error_label->setStyleSheet("color:red"); // temporary because label is red by default
        ui->error_label->setText("Incorrect Login");
    }
 }
