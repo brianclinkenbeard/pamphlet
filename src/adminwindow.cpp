@@ -8,6 +8,7 @@ AdminWindow::AdminWindow(QWidget *parent) :
 {
     ui->setupUi(this);
 
+    /* headers */
     QStringList headerTitles;
     headerTitles<<"Company"<<"Street Address"<<"City"<<"State"<<"Zip Code"<<"Key Customer"<<"Customer Rate";
     qDebug() << "Size: ";
@@ -15,6 +16,10 @@ AdminWindow::AdminWindow(QWidget *parent) :
     ui->tableWidget_CustomerInfo->setColumnCount(headerTitles.size());
     ui->tableWidget_CustomerInfo->setHorizontalHeaderLabels(headerTitles);
 
+    /* make columns fit window */
+    ui->tableWidget_CustomerInfo->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
+
+    /* generate list */
     on_displayInfoButton_clicked();
 }
 
