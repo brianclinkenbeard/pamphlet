@@ -52,21 +52,20 @@ void DbManager::FileToDb(const QString& path)
     while(!in.atEnd()){
         company = in.readLine();
         streetAddress = in.readLine();
-        in.operator>>(city);
-        while(city[city.size()-1] != ',')
-        {
-            in.operator>>(tempCity);
-            city = city +" "+ tempCity;
-        }
-        in.operator >>(state);
-        in.operator >>(zip);
-        in.readLine();//reads \n
+
+        /*
+         * location[0] - "[city]"
+         * location[1] - "[state] [zip]"
+         */
+        QStringList location = in.readLine().split(", ");
+        city = location[0];
+        state = location[1].section(" ", 0, 0);
+        zip = location[1].section(" ", 1, 1);
+
         rate = in.readLine();
-        if(in.readLine().toLower()=="key"){
-            value = 1;
-        }else{
-            value = 0;
-        }
+
+        in.readLine().toLower() == "key" ? value = 1 : value = 0;
+
         in.readLine();//reads the empty line
 
         qry.prepare("insert into Customer_Info (Company,Street_Address,City,State,Zip,Value) values('"+company+"','"+streetAddress+"','"+city+"','"+ state+"','"+zip+"','"+QString::number(value)+"')");
