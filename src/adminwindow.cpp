@@ -43,8 +43,8 @@ void AdminWindow::on_sortBox_currentIndexChanged(int index)
 void AdminWindow::showCustomers(bool keyOnly)
 {
     std::vector<Customer> DBCustomers = DbManager::getInstance()->getCustomers();
-    QString keyCustomer;
     std::vector<Customer> customers;
+    QString keyCustomer;
 
     /* clear table */
     ui->tableWidget_CustomerInfo->setRowCount(0);
@@ -56,6 +56,7 @@ void AdminWindow::showCustomers(bool keyOnly)
         }
     }
 
+    /* sort customers by name */
     std::sort (customers.begin(), customers.end());
 
     for (unsigned int i = 0; i < customers.size(); ++i) {
