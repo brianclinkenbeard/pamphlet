@@ -2,6 +2,7 @@
 #include "ui_mainwindow.h"
 #include "dialoghelp.h"
 #include "adminlogin.h"
+#include "testimonialsdisplay.h"
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -48,4 +49,10 @@ void MainWindow::on_loginButton_clicked()
     AdminLogin *loginWindow = new AdminLogin;
     loginWindow->show();
     this->close();
+}
+
+void MainWindow::on_pushButton_viewMore_clicked()
+{
+    TestimonialsDisplay *testDis = new TestimonialsDisplay;
+    testDis->show();
 }

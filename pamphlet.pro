@@ -31,7 +31,8 @@ SOURCES += src/main.cpp \
     src/address.cpp \
     src/dialoghelp.cpp \
     src/adminlogin.cpp \
-    src/adminwindow.cpp
+    src/adminwindow.cpp \
+    src/testimonialsdisplay.cpp
 
 HEADERS  += src/mainwindow.h \
     src/dbmanager.h \
@@ -39,12 +40,14 @@ HEADERS  += src/mainwindow.h \
     src/address.h \
     src/dialoghelp.h \
     src/adminlogin.h \
-    src/adminwindow.h
+    src/adminwindow.h \
+    src/testimonialsdisplay.h
 
 FORMS    += src/mainwindow.ui \
     src/dialoghelp.ui \
     src/adminlogin.ui \
-    src/adminwindow.ui
+    src/adminwindow.ui \
+    src/testimonialsdisplay.ui
 
 DISTFILES += \
     pamphletDB.db

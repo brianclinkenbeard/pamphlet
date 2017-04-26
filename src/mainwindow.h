@@ -22,6 +22,8 @@ private slots:
 
     void on_loginButton_clicked();
 
+    void on_pushButton_viewMore_clicked();
+
 private:
     Ui::MainWindow *ui;
 };
