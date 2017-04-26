@@ -16,10 +16,12 @@ public:
     void setInterest(Interest);
     void setInterest(QString);
     void setValue(int);
-    QString getName();
-    Address getCustomerAddress();
-    Interest getInterest();
-    int getValue();
+    QString getName() const;
+    Address getCustomerAddress() const;
+    Interest getInterest() const;
+    int getValue() const;
+    bool operator <(const Customer&) const;
+    bool operator >(const Customer&) const;
     ~Customer();
 private:
     QString companyName;

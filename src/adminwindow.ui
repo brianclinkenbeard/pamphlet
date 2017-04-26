@@ -16,9 +16,9 @@
   <widget class="QPushButton" name="logoutButton">
    <property name="geometry">
     <rect>
-     <x>870</x>
+     <x>20</x>
      <y>20</y>
-     <width>131</width>
+     <width>121</width>
      <height>31</height>
     </rect>
    </property>
@@ -26,39 +26,13 @@
     <string>Logout</string>
    </property>
   </widget>
-  <widget class="QWidget" name="layoutWidget">
-   <property name="geometry">
-    <rect>
-     <x>870</x>
-     <y>130</y>
-     <width>131</width>
-     <height>121</height>
-    </rect>
-   </property>
-   <layout class="QVBoxLayout" name="verticalLayout">
-    <item>
-     <widget class="QPushButton" name="displayInfoButton">
-      <property name="text">
-       <string>Display Info</string>
-      </property>
-     </widget>
-    </item>
-    <item>
-     <widget class="QPushButton" name="pushButton_3">
-      <property name="text">
-       <string>PushButton</string>
-      </property>
-     </widget>
-    </item>
-   </layout>
-  </widget>
   <widget class="QTableWidget" name="tableWidget_CustomerInfo">
    <property name="geometry">
     <rect>
-     <x>50</x>
-     <y>60</y>
-     <width>791</width>
-     <height>541</height>
+     <x>20</x>
+     <y>70</y>
+     <width>981</width>
+     <height>561</height>
     </rect>
    </property>
    <attribute name="horizontalHeaderDefaultSectionSize">
@@ -67,6 +41,65 @@
    <attribute name="horizontalHeaderMinimumSectionSize">
     <number>37</number>
    </attribute>
+  </widget>
+  <widget class="QPushButton" name="deleteButton">
+   <property name="geometry">
+    <rect>
+     <x>450</x>
+     <y>20</y>
+     <width>121</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Delete Customer</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="addButton">
+   <property name="geometry">
+    <rect>
+     <x>310</x>
+     <y>20</y>
+     <width>121</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Add Customer</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="transactionsButton">
+   <property name="geometry">
+    <rect>
+     <x>590</x>
+     <y>20</y>
+     <width>121</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Transactions</string>
+   </property>
+  </widget>
+  <widget class="QComboBox" name="sortBox">
+   <property name="geometry">
+    <rect>
+     <x>880</x>
+     <y>20</y>
+     <width>121</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <item>
+    <property name="text">
+     <string>All Customers</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Key Customers</string>
+    </property>
+   </item>
   </widget>
  </widget>
  <resources/>

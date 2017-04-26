@@ -17,11 +17,13 @@ public:
     ~AdminWindow();
 
 private slots:
-    void on_displayInfoButton_clicked();
-
     void on_logoutButton_clicked();
 
+    void on_sortBox_currentIndexChanged(int index);
+
 private:
+    /* helper function */
+    void showCustomers(bool);
     Ui::AdminWindow *ui;
 };
 

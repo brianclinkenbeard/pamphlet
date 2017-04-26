@@ -52,24 +52,35 @@ void Customer::setValue(int initValue)
 {
     value = initValue;
 }
-QString Customer::getName()
+QString Customer::getName() const
 {
     return companyName;
 }
 
-Address Customer::getCustomerAddress()
+Address Customer::getCustomerAddress() const
 {
     return address;
 }
 
-Interest Customer::getInterest()
+Interest Customer::getInterest() const
 {
     return interest;
 }
 
-int Customer::getValue()
+int Customer::getValue() const
 {
     return value;
+}
+
+/* compare strings for std::sort */
+bool Customer::operator <(const Customer& compareCustomer) const
+{
+    return (getName() < compareCustomer.getName());
+}
+
+bool Customer::operator >(const Customer& compareCustomer) const
+{
+    return (getName() > compareCustomer.getName());
 }
 
 Customer::~Customer()
