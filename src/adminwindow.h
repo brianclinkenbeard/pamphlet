@@ -2,6 +2,7 @@
 #define ADMINWINDOW_H
 
 #include <QWidget>
+#include <QTableWidgetItem>
 #include "dbmanager.h"
 
 namespace Ui {
@@ -21,9 +22,15 @@ private slots:
 
     void on_sortBox_currentIndexChanged(int index);
 
+    void on_tableWidget_CustomerInfo_itemClicked(QTableWidgetItem *item);
+
+    void on_deleteButton_clicked();
+
 private:
     /* helper function */
     void showCustomers(bool);
+    int selected;
+
     Ui::AdminWindow *ui;
 };
 

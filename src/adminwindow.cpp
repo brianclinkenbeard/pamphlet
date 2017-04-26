@@ -76,3 +76,17 @@ void AdminWindow::showCustomers(bool keyOnly)
         ui->tableWidget_CustomerInfo->setItem(i, 6, new QTableWidgetItem(QString::number(customers.at(i).getInterest())));
     }
 }
+
+void AdminWindow::on_tableWidget_CustomerInfo_itemClicked(QTableWidgetItem *item)
+{
+    selected = item->row();
+    qDebug() << selected;
+}
+
+void AdminWindow::on_deleteButton_clicked()
+{
+    /*
+     * TODO: if item is selected, dialog confirms whether to delete the selected element.
+     *       if item is not selected, dialog states to select an element to delete
+     */
+}
