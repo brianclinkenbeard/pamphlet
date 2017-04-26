@@ -32,13 +32,13 @@ void MainWindow::on_comboBox_currentIndexChanged(int index)
         osInfo = "Select an operating system to explore security opportunities we offer.";
         break;
     case 1:
-        osInfo = "[Windows Opportunities]";
+        osInfo = "Top level protection of all your data against hackers, viruses, and many other types of malware for Windows Software.";
         break;
     case 2:
-        osInfo = "[macOS Opportunities]";
+        osInfo = "Top level protection of all your data against hackers and everything else that tries interfering with your data for Mac Software.";
         break;
     case 3:
-        osInfo = "[GNU/Linux Opportunities]";
+        osInfo = "Top level protection of all your data against hackers and malicious malware for Linux Software.";
         break;
     }
     ui->osinfo_browser->setText(osInfo);
