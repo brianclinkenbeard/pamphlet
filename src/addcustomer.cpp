@@ -35,7 +35,7 @@ void AddCustomer::on_pushButton_clicked()
         ui->label_message->setText("Not a valid value for key, please enter 0, or 1");
         return;
     }
-   if(ui->lineEdit_Interest->text()!="0" && ui->lineEdit_Interest->text()!="1"&& ui->lineEdit_Interest->text()!="2"){
+   if(ui->lineEdit_Interest->text()!="0" && ui->lineEdit_Interest->text()!="1"&& ui->lineEdit_Interest->text()!="2" && ui->lineEdit_Interest->text()!=""){
         ui->label_message->setText("Not a valid value for Interest, please enter 0: not interested,  1: somewhat interested, 2: very interested");
         return;
     }
