@@ -1,6 +1,7 @@
 #include "adminwindow.h"
 #include "ui_adminwindow.h"
 #include "mainwindow.h"
+#include"addcustomer.h"
 
 AdminWindow::AdminWindow(QWidget *parent) :
     QWidget(parent),
@@ -43,6 +44,7 @@ void AdminWindow::on_sortBox_currentIndexChanged(int index)
 void AdminWindow::showCustomers(bool keyOnly)
 {
     std::vector<Customer> DBCustomers = DbManager::getInstance()->getCustomers();
+    qDebug()<<DBCustomers.size();
     std::vector<Customer> customers;
     QString keyCustomer;
 
@@ -89,4 +91,16 @@ void AdminWindow::on_deleteButton_clicked()
      * TODO: if item is selected, dialog confirms whether to delete the selected element.
      *       if item is not selected, dialog states to select an element to delete
      */
+}
+
+
+void AdminWindow::on_addButton_clicked()
+{
+    AddCustomer* addCustomerWindow = new AddCustomer(this);
+    addCustomerWindow->show();
+}
+
+int AdminWindow::sortBoxIndex()
+{
+    return ui->sortBox->currentIndex();
 }

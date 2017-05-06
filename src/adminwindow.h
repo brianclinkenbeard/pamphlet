@@ -16,6 +16,8 @@ class AdminWindow : public QWidget
 public:
     explicit AdminWindow(QWidget *parent = 0);
     ~AdminWindow();
+    void showCustomers(bool);
+    int sortBoxIndex();
 
 private slots:
     void on_logoutButton_clicked();
@@ -26,9 +28,9 @@ private slots:
 
     void on_deleteButton_clicked();
 
+    void on_addButton_clicked();
+
 private:
-    /* helper function */
-    void showCustomers(bool);
     int selected;
 
     Ui::AdminWindow *ui;
