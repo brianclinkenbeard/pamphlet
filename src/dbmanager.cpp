@@ -129,3 +129,37 @@ std::vector<Customer>& DbManager::getCustomers()
 {
     return customers;
 }
+
+void DbManager::CustomersToDb()
+{
+    QSqlQuery qry1;
+    QSqlQuery qry2;
+    if (!customer_db.open()) {
+        qDebug() << "Error: connection with database fail";
+        return;
+    }
+
+    for(std::vector<Customer>::iterator it =customers.begin(); it<customers.end(); it++)
+    {
+        /*saving to customer info table*/
+        qry1.prepare("insert into Customer_Info (Company,Street_Address,City,State,Zip,Value) values('"+it->getName()+"','"+it->getCustomerAddress().getStreet()+"','"+it->getCustomerAddress().getCity()+"','"+ it->getCustomerAddress().getState()+"','"+it->getCustomerAddress().getZip()+"','"+QString::number(it->getValue())+"')");
+        qry1.exec();
+
+        /*saving to custmer rating table*/
+        QString interest;
+        switch (it->getInterest())
+        {
+            case 0:
+                interest = "not interested";
+                break;
+            case 1:
+                interest = "somewhat interested";
+                break;
+            case 2:
+                interest = "very interested";
+        }
+
+        qry2.prepare("insert into Customer_Rating (Company, Interest) values('"+it->getName()+"', '"+interest+"')");
+        qry2.exec();
+    }
+}

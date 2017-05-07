@@ -13,6 +13,7 @@ public:
     static DbManager* getInstance();
     void FileToDb(const QString& path);
     void DbToCustomers();
+    void CustomersToDb();
     std::vector<Customer>& getCustomers();
 
 private:

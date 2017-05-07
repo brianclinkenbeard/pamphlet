@@ -29,6 +29,7 @@ AdminWindow::~AdminWindow()
 
 void AdminWindow::on_logoutButton_clicked()
 {
+   DbManager::getInstance()->CustomersToDb();//saving changes of vector to database
    MainWindow *main = new MainWindow;
    main->show();
    this->close();
