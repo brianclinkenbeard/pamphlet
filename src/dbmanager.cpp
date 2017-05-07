@@ -113,14 +113,14 @@ void DbManager::DbToCustomers()
         if(qry2.next())//to get the value out of query
             customer.setInterest(qry2.value(0).toString());
         customers.push_back(customer);
-        tempCustomer = customers.at(i);
+   /*     tempCustomer = customers.at(i);
         qDebug()<<tempCustomer.getName();
         qDebug()<<tempCustomer.getCustomerAddress().getCity();
         qDebug()<<tempCustomer.getCustomerAddress().getStreet();
         qDebug()<<tempCustomer.getCustomerAddress().getState();
         qDebug()<<tempCustomer.getCustomerAddress().getZip();
         qDebug()<<"key: "<<QString::number(tempCustomer.getValue());
-        qDebug()<<"interest: "<<QString::number(tempCustomer.getInterest());
+        qDebug()<<"interest: "<<QString::number(tempCustomer.getInterest());*/
         i++;
     }
 }
@@ -161,5 +161,40 @@ void DbManager::CustomersToDb()
 
         qry2.prepare("insert into Customer_Rating (Company, Interest) values('"+it->getName()+"', '"+interest+"')");
         qry2.exec();
+    }
+}
+
+bool DbManager::isFirstExecution()
+{
+    QSqlQuery qry;
+    bool value;
+    qry.prepare("SELECT First FROM First_Execution");
+    if(!qry.exec()){
+        qDebug()<<"unable to execute query";
+    }
+    if(qry.next())
+        value = qry.value(0).toBool();
+    if(value){
+        qry.prepare("UPDATE First_Execution SET First = "+QString::number(0));
+        if(!qry.exec())
+            qDebug()<<"could not change the value of first";
+    }
+    return value;
+
+}
+
+void DbManager::DeleteFromDb(QString name)
+{
+    QSqlQuery qry1;
+    QSqlQuery qry2;
+    qry1.prepare("DELETE FROM Customer_Info WHERE Company = '"+name+"'");
+    qry1.exec();
+    qDebug()<<"name in function db: "<<name;
+    qry2.prepare("DELETE FROM Customer_Rating WHERE Company = '"+name+"'");
+    if(qry2.exec()){
+        qDebug()<<"data deleted from Customer_rating";
+    }
+    else{
+        qDebug()<<"unable to exec qry";
     }
 }

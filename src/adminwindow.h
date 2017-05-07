@@ -31,8 +31,8 @@ private slots:
     void on_addButton_clicked();
 
 private:
-    int selected;
 
+    int selected;
     Ui::AdminWindow *ui;
 };
 

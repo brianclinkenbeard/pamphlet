@@ -15,6 +15,8 @@ public:
     void DbToCustomers();
     void CustomersToDb();
     std::vector<Customer>& getCustomers();
+    void DeleteFromDb(QString name);
+    bool isFirstExecution();
 
 private:
 
