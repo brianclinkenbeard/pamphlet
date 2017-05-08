@@ -20,6 +20,9 @@ AdminWindow::AdminWindow(QWidget *parent) :
 
     /* generate list */
     showCustomers(false);
+
+    /* nothing selected by default */
+    selected = -1;
 }
 
 AdminWindow::~AdminWindow()
@@ -88,26 +91,29 @@ void AdminWindow::on_tableWidget_CustomerInfo_itemClicked(QTableWidgetItem *item
 
 void AdminWindow::on_deleteButton_clicked()
 {
-    /*
-     * TODO: if item is selected, dialog confirms whether to delete the selected element.
-     *       if item is not selected, dialog states to select an element to delete
-     */
-    //write exception for when nothing is selected by delete button is clicked
-        /*deleting from database*/
-        QString name = ui->tableWidget_CustomerInfo->item(selected, 0)->text();
-        qDebug()<<"name of item: "<<name;
-        DbManager::getInstance()->DeleteFromDb(name);
+    /* if nothing is selected, exit */
+    if (selected == -1) {
+        /* TODO: Dialog box? */
+        qDebug() << "Nothing is selected to delete. Please select an element.";
+        return;
+    }
 
-        /*deleting from vector*/
-        std::vector<Customer>& customers = DbManager::getInstance()->getCustomers();
-        for(unsigned int i =0; i<customers.size(); i++)
-        {
-            if (customers.at(i).getName() == name){
-                customers.erase(customers.begin()+i);
-                showCustomers(ui->sortBox->currentIndex());
-            }
+    /* deleting from database */
+    QString name = ui->tableWidget_CustomerInfo->item(selected, 0)->text();
+    qDebug()<<"name of item: "<<name;
+    DbManager::getInstance()->DeleteFromDb(name);
+
+    /* deleting from vector */
+    std::vector<Customer>& customers = DbManager::getInstance()->getCustomers();
+    for (unsigned int i =0; i<customers.size(); i++) {
+        if (customers.at(i).getName() == name) {
+            customers.erase(customers.begin()+i);
+            /* clear selection */
+            selected = -1;
+            /* refresh list */
+            showCustomers(ui->sortBox->currentIndex());
         }
-
+    }
 }
 
 
