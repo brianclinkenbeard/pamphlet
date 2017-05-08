@@ -18,11 +18,15 @@ AdminWindow::AdminWindow(QWidget *parent) :
     /* make columns fit window */
     ui->tableWidget_CustomerInfo->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
 
-    /* generate list */
-    showCustomers(false);
+    /* hide vertical header and select entire rows */
+    ui->tableWidget_CustomerInfo->verticalHeader()->hide();
+    ui->tableWidget_CustomerInfo->setSelectionBehavior(QAbstractItemView::SelectRows);
 
     /* nothing selected by default */
     selected = -1;
+
+    /* generate list */
+    showCustomers(false);
 }
 
 AdminWindow::~AdminWindow()
