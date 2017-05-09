@@ -13,6 +13,6 @@ int main(int argc, char *argv[])
         DbManager::getInstance()->FileToDb(":/res/customerData.txt");
 
     DbManager::getInstance()->DbToCustomers();
-
+    DbManager::getInstance()->DbToInventory();
     return a.exec();
 }

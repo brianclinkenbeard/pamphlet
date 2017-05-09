@@ -2,7 +2,7 @@
 
 DbManager* DbManager::db = NULL;
 
-DbManager::DbManager(const QString& path):customers()
+DbManager::DbManager(const QString& path):customers(), inventory()
 {
     customer_db = QSqlDatabase::addDatabase("QSQLITE");
     customer_db.setDatabaseName(path);
@@ -100,7 +100,6 @@ void DbManager::DbToCustomers()
     if(!qry.exec()){
         qDebug()<<"unable to execute query";
     }
-    int i = 0;
     while(qry.next())
     {
         customer.setName(qry.value(0).toString());
@@ -121,8 +120,30 @@ void DbManager::DbToCustomers()
         qDebug()<<tempCustomer.getCustomerAddress().getZip();
         qDebug()<<"key: "<<QString::number(tempCustomer.getValue());
         qDebug()<<"interest: "<<QString::number(tempCustomer.getInterest());*/
-        i++;
     }
+}
+
+void DbManager::DbToInventory()
+{
+    Product product;
+    QSqlQuery qry;
+    qry.prepare("SELECT * FROM Inventory");
+    if(!qry.exec())
+    {
+        qDebug()<<"Unable to read from invetory table";
+    }
+    while(qry.next())
+    {
+        product.setName(qry.value(0).toString());
+        product.setPrice(qry.value(1).toDouble());
+        inventory.push_back(product);
+    }
+    /*
+    for(unsigned int i = 0; i<inventory.size(); i++)
+    {
+        qDebug()<<inventory.at(i).getName();
+        qDebug()<<inventory.at(i).getPrice();
+    }*/
 }
 
 std::vector<Customer>& DbManager::getCustomers()
@@ -197,4 +218,20 @@ void DbManager::DeleteFromDb(QString name)
     else{
         qDebug()<<"unable to exec qry";
     }
+}
+
+std::vector<Product> DbManager::getInventory()
+{
+    return inventory;
+}
+
+Product DbManager::searchInInventory(QString itemName)
+{
+    unsigned int i;
+    for (i = 0; i<inventory.size(); i++)
+    {
+        if(itemName == inventory.at(i).getName())
+            break;
+    }
+    return inventory.at(i);
 }

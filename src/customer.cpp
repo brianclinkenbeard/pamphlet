@@ -83,10 +83,33 @@ bool Customer::operator >(const Customer& compareCustomer) const
     return (getName() > compareCustomer.getName());
 }
 
+void Customer::addProduct(Product item)
+{
+    bool found = false;
+    /*if the item is repeated*/
+    for(unsigned int i=0; i<products.size();i++){
+        if (products.at(i).getName()==item.getName()){
+            products.at(i).setQuantity(item.getQuantity()+products.at(i).getQuantity());
+            found = true;
+            break;
+        }
+    }
+    /*if the item is not repeated*/
+    if(!found)
+        products.push_back(item);
+}
+
+std::vector<Product>& Customer::getProducts()
+{
+    return products;
+}
+
 Customer::~Customer()
 {
 
 }
+
+
 
 
 

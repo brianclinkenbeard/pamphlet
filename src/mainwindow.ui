@@ -346,7 +346,7 @@ p, li { white-space: pre-wrap; }
      <rect>
       <x>470</x>
       <y>130</y>
-      <width>531</width>
+      <width>541</width>
       <height>301</height>
      </rect>
     </property>
@@ -357,6 +357,144 @@ p, li { white-space: pre-wrap; }
      <attribute name="title">
       <string>Order</string>
      </attribute>
+     <widget class="QComboBox" name="listOfProducts">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>110</y>
+        <width>241</width>
+        <height>22</height>
+       </rect>
+      </property>
+      <item>
+       <property name="text">
+        <string>W</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>X</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Y</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Z</string>
+       </property>
+      </item>
+     </widget>
+     <widget class="QLabel" name="label">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>20</y>
+        <width>241</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Enter the name of your company:</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="lineEdit_customerName">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>50</y>
+        <width>241</width>
+        <height>20</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_2">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>80</y>
+        <width>241</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Choose from our list of products</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_errorMessage">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>250</y>
+        <width>281</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="Purchase">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>210</y>
+        <width>111</width>
+        <height>23</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Purchase</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_3">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>140</y>
+        <width>241</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Enter how many of this item </string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="lineEdit_quantity">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>170</y>
+        <width>241</width>
+        <height>20</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="DisplayPurchases">
+      <property name="geometry">
+       <rect>
+        <x>150</x>
+        <y>210</y>
+        <width>111</width>
+        <height>23</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Display transaction</string>
+      </property>
+     </widget>
+     <widget class="QTableWidget" name="TransactionTable">
+      <property name="geometry">
+       <rect>
+        <x>280</x>
+        <y>10</y>
+        <width>241</width>
+        <height>221</height>
+       </rect>
+      </property>
+     </widget>
     </widget>
     <widget class="QWidget" name="guarantee_tab">
      <attribute name="title">

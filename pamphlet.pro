@@ -33,7 +33,8 @@ SOURCES += src/main.cpp \
     src/adminlogin.cpp \
     src/adminwindow.cpp \
     src/testimonialsdisplay.cpp \
-    src/addcustomer.cpp
+    src/addcustomer.cpp \
+    src/product.cpp
 
 HEADERS  += src/mainwindow.h \
     src/dbmanager.h \
@@ -43,7 +44,8 @@ HEADERS  += src/mainwindow.h \
     src/adminlogin.h \
     src/adminwindow.h \
     src/testimonialsdisplay.h \
-    src/addcustomer.h
+    src/addcustomer.h \
+    src/product.h
 
 FORMS    += src/mainwindow.ui \
     src/dialoghelp.ui \

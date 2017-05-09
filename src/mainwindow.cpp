@@ -11,6 +11,7 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->setupUi(this);
     /* mailto for email label */
     ui->email_label->setOpenExternalLinks(true);
+    userIndex = -1;
 }
 
 MainWindow::~MainWindow()
@@ -55,4 +56,48 @@ void MainWindow::on_pushButton_viewMore_clicked()
 {
     TestimonialsDisplay *testDis = new TestimonialsDisplay;
     testDis->show();
+}
+
+void MainWindow::on_Purchase_clicked()
+{
+    bool found = false;
+    std::vector<Customer>& customers = DbManager::getInstance()->getCustomers();
+    unsigned int i;
+    for (i =0; i<customers.size(); i++)
+    {
+        if(customers.at(i).getName() == ui->lineEdit_customerName->text())
+        {
+            found = true;
+            break;
+        }
+    }
+    if(found){
+        if(ui->lineEdit_quantity->text().toInt()<=5 && ui->lineEdit_quantity->text().toInt()>0)
+        {
+            Product product = DbManager::getInstance()->searchInInventory(ui->listOfProducts->currentText());
+            product.setQuantity(ui->lineEdit_quantity->text().toInt());
+            customers.at(i).addProduct(product);
+            ui->label_errorMessage->setText("Successful purchase");
+            userIndex = i;
+        }else{
+            ui->label_errorMessage->setText("Invalid quantity, you can buy 1 to 5 number of this product");
+        }
+    }else{
+        ui->label_errorMessage->setText("Invalid customer");
+    }
+}
+
+void MainWindow::on_DisplayPurchases_clicked()
+{
+    ui->TransactionTable->setRowCount(4);
+    ui->TransactionTable->setColumnCount(3);
+    std::vector<Customer>& customers = DbManager::getInstance()->getCustomers();//why if not ref it give the size of products 0???
+    if(userIndex != -1){
+        for(unsigned int i = 0; i < customers.at(userIndex).getProducts().size(); i++){
+          //  ui->TransactionTable->insertRow(i);
+            ui->TransactionTable->setItem(i, 0, new QTableWidgetItem(customers.at(userIndex).getProducts().at(i).getName()));
+            ui->TransactionTable->setItem(i, 1, new QTableWidgetItem(QString::number(customers.at(userIndex).getProducts().at(i).getPrice())));
+            ui->TransactionTable->setItem(i, 2, new QTableWidgetItem(QString::number(customers.at(userIndex).getProducts().at(i).getQuantity())));
+        }
+    }
 }

@@ -1,7 +1,8 @@
 #ifndef CUSTOMER_H
 #define CUSTOMER_H
-
+#include"product.h"
 #include "address.h"
+#include<vector>
 
 enum Interest {LOW=0, MEDIUM, HIGH};  // Customer's level of interest in our product
 
@@ -22,12 +23,15 @@ public:
     int getValue() const;
     bool operator <(const Customer&) const;
     bool operator >(const Customer&) const;
+    void addProduct(Product item);
+    std::vector<Product>& getProducts();
     ~Customer();
 private:
     QString companyName;
     Address address;
     Interest interest;
     int value; // if 1 "key", if 0 "nice to have"
+    std::vector<Product> products;
 };
 
 #endif // CUSTOMER_H

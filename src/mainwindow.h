@@ -2,6 +2,7 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include"dbmanager.h"
 
 namespace Ui {
 class MainWindow;
@@ -24,7 +25,12 @@ private slots:
 
     void on_pushButton_viewMore_clicked();
 
+    void on_Purchase_clicked();
+
+    void on_DisplayPurchases_clicked();
+
 private:
+    int userIndex;
     Ui::MainWindow *ui;
 };
 
