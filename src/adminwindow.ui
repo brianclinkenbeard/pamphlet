@@ -45,7 +45,7 @@
   <widget class="QPushButton" name="deleteButton">
    <property name="geometry">
     <rect>
-     <x>530</x>
+     <x>430</x>
      <y>20</y>
      <width>151</width>
      <height>31</height>
@@ -58,7 +58,7 @@
   <widget class="QPushButton" name="addButton">
    <property name="geometry">
     <rect>
-     <x>370</x>
+     <x>270</x>
      <y>20</y>
      <width>151</width>
      <height>31</height>
@@ -71,14 +71,14 @@
   <widget class="QPushButton" name="transactionsButton">
    <property name="geometry">
     <rect>
-     <x>690</x>
+     <x>590</x>
      <y>20</y>
      <width>151</width>
      <height>31</height>
     </rect>
    </property>
    <property name="text">
-    <string>History of purchases</string>
+    <string>Purchases</string>
    </property>
   </widget>
   <widget class="QComboBox" name="sortBox">

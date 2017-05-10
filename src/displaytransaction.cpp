@@ -12,14 +12,23 @@ DisplayTransaction::DisplayTransaction(int UserIndex):
     ui(new Ui::DisplayTransaction)
 {
     ui->setupUi(this);
+
+    /* set header labels */
+    ui->TransactionTable->setColumnCount(4);
+    ui->TransactionTable->setHorizontalHeaderLabels(QString("Product;Price;Quantity;Total Spent").split(";"));
+    ui->TransactionTable->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
+
     userIndex = UserIndex;
-    QSqlQuery qry;
     std::vector<Customer>& customers = DbManager::getInstance()->getCustomers();
+
+    /* set customer label to the customer name */
+    ui->customer_label->setText(customers.at(userIndex).getName());
+
+    QSqlQuery qry;
     std::vector<Product> products = DbManager::getInstance()->getInventory();
+
     if(userIndex != -1){
         ui->TransactionTable->setRowCount(products.size());
-        ui->TransactionTable->setColumnCount(4);
-        ui->TransactionTable->setHorizontalHeaderLabels(QString("Product;Price;Quantity;Total Spent").split(";"));
         for(unsigned int i = 0; i < products.size(); i++){
             ui->TransactionTable->setItem(i, 0, new QTableWidgetItem(products.at(i).getName()));
             ui->TransactionTable->setItem(i, 1, new QTableWidgetItem("$"+QString::number(products.at(i).getPrice())));

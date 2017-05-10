@@ -86,38 +86,24 @@ void MainWindow::on_Purchase_clicked()
             Product product = DbManager::getInstance()->searchInInventory(ui->listOfProducts->currentText());
             product.setQuantity(ui->lineEdit_quantity->text().toInt());
             customers.at(i).addProduct(product);
+            ui->label_errorMessage->setStyleSheet("color:green");
             ui->label_errorMessage->setText("Successful purchase");
             QSqlQuery qry;
             qry.prepare("UPDATE Transactions SET "+ui->listOfProducts->currentText()+" = "+QString::number(customers.at(i).getQuantityOf(ui->listOfProducts->currentText()))+" WHERE Company = '"+customers.at(i).getName()+"'");
             if(!qry.exec())
                 qDebug()<<"unable to exec";
         }else{
-            ui->label_errorMessage->setText("Invalid quantity, you can buy 1 to 5 number of this product");
+            if (ui->lineEdit_quantity->text().toInt() < 1) {
+                ui->label_errorMessage->setText("Quantity must be greater than 0.");
+            }
+            if (ui->lineEdit_quantity->text().toInt() > 5) {
+                ui->label_errorMessage->setText("Quantity must be fewer than 5.");
+            }
         }
     }else{
+        ui->label_errorMessage->setStyleSheet("color:red");
         ui->label_errorMessage->setText("Invalid customer");
     }
     ui->lineEdit_customerName->clear();
     ui->lineEdit_quantity->clear();
-}
-
-void MainWindow::on_DisplayPurchases_clicked()
-{
-    bool found = false;
-    std::vector<Customer>& customers = DbManager::getInstance()->getCustomers();
-    for (unsigned int i =0; i<customers.size(); i++)
-    {
-        if(customers.at(i).getName() == ui->lineEdit_customerName->text())
-        {
-            userIndex = i;
-            found = true;
-            break;
-        }
-    }
-    if(!found){
-        ui->label_errorMessage->setText("Invalid customer");
-        return;
-    }
-    DisplayTransaction* TransactionWindow = new DisplayTransaction(userIndex);
-    TransactionWindow->show();
 }
