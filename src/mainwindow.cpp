@@ -10,6 +10,13 @@ MainWindow::MainWindow(QWidget *parent) :
     ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+    QPixmap image("pic1.jpg");
+    ui->label_image->setPixmap(image);
+    QPixmap image2("pic2.jpg");
+    ui->label_backGround->setPixmap(image2);
+    QPixmap image3("pic3.jpg");
+    ui->label_logo->setPixmap(image3);
+
     /* mailto for email label */
     ui->email_label->setOpenExternalLinks(true);
     userIndex = -1;
