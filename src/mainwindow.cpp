@@ -93,6 +93,8 @@ void MainWindow::on_Purchase_clicked()
             if(!qry.exec())
                 qDebug()<<"unable to exec";
         }else{
+            ui->label_errorMessage->setStyleSheet("color:red");
+
             if (ui->lineEdit_quantity->text().toInt() < 1) {
                 ui->label_errorMessage->setText("Quantity must be greater than 0.");
             }
