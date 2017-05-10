@@ -112,7 +112,6 @@ void AdminWindow::on_deleteButton_clicked()
     }
 }
 
-
 void AdminWindow::on_addButton_clicked()
 {
     AddCustomer* addCustomerWindow = new AddCustomer(this);

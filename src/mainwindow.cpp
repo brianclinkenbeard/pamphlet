@@ -10,11 +10,11 @@ MainWindow::MainWindow(QWidget *parent) :
     ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
-    QPixmap image("pic1.jpg");
+    QPixmap image(":/res/pic1.jpg");
     ui->label_image->setPixmap(image);
-    QPixmap image2("pic2.jpg");
+    QPixmap image2(":/res/pic2.jpg");
     ui->label_backGround->setPixmap(image2);
-    QPixmap image3("pic3.jpg");
+    QPixmap image3(":/res/pic3.jpg");
     ui->label_logo->setPixmap(image3);
 
     /* mailto for email label */
