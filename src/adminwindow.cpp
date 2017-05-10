@@ -18,12 +18,10 @@ AdminWindow::AdminWindow(QWidget *parent) :
     /* make columns fit window */
     ui->tableWidget_CustomerInfo->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
 
-    /* hide vertical header and select entire rows */
+    /* hide vertical header and selection behavior */
     ui->tableWidget_CustomerInfo->verticalHeader()->hide();
     ui->tableWidget_CustomerInfo->setSelectionBehavior(QAbstractItemView::SelectRows);
-
-    /* nothing selected by default */
-    selected = -1;
+    ui->tableWidget_CustomerInfo->setSelectionMode(QAbstractItemView::SingleSelection);
 
     /* generate list */
     showCustomers(false);
@@ -87,23 +85,19 @@ void AdminWindow::showCustomers(bool keyOnly)
     }
 }
 
-void AdminWindow::on_tableWidget_CustomerInfo_itemClicked(QTableWidgetItem *item)
-{
-    selected = item->row();
-    qDebug() <<"item row:"<< selected;
-}
-
 void AdminWindow::on_deleteButton_clicked()
 {
+    QModelIndexList selected = ui->tableWidget_CustomerInfo->selectionModel()->selectedRows();
+
     /* if nothing is selected, exit */
-    if (selected == -1) {
+    if (selected.isEmpty()) {
         /* TODO: Dialog box? */
-        qDebug() << "Nothing is selected to delete. Please select an element.";
+        qDebug() << "Please select an customer.";
         return;
     }
 
     /* deleting from database */
-    QString name = ui->tableWidget_CustomerInfo->item(selected, 0)->text();
+    QString name = ui->tableWidget_CustomerInfo->item(selected.at(0).row(), 0)->text();
     qDebug()<<"name of item: "<<name;
     DbManager::getInstance()->DeleteFromDb(name);
 
@@ -112,8 +106,6 @@ void AdminWindow::on_deleteButton_clicked()
     for (unsigned int i =0; i<customers.size(); i++) {
         if (customers.at(i).getName() == name) {
             customers.erase(customers.begin()+i);
-            /* clear selection */
-            selected = -1;
             /* refresh list */
             showCustomers(ui->sortBox->currentIndex());
         }
@@ -134,13 +126,15 @@ int AdminWindow::sortBoxIndex()
 
 void AdminWindow::on_transactionsButton_clicked()
 {
+    QModelIndexList selected = ui->tableWidget_CustomerInfo->selectionModel()->selectedRows();
+
     /* if nothing is selected, exit */
-    if (selected == -1) {
+    if (selected.isEmpty()) {
         /* TODO: Dialog box? */
-        qDebug() << "Nothing is selected to delete. Please select an element.";
+        qDebug() << "Please select an customer.";
         return;
     }
-    QString name = ui->tableWidget_CustomerInfo->item(selected, 0)->text();
+    QString name = ui->tableWidget_CustomerInfo->item(selected.at(0).row(), 0)->text();
     std::vector<Customer> customers = DbManager::getInstance()->getCustomers();
     for(unsigned int i = 0; i<customers.size();i++)
     {

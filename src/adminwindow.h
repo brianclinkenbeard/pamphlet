@@ -25,8 +25,6 @@ private slots:
 
     void on_sortBox_currentIndexChanged(int index);
 
-    void on_tableWidget_CustomerInfo_itemClicked(QTableWidgetItem *item);
-
     void on_deleteButton_clicked();
 
     void on_addButton_clicked();
@@ -35,7 +33,6 @@ private slots:
 
 private:
 
-    int selected;
     Ui::AdminWindow *ui;
 };
 
