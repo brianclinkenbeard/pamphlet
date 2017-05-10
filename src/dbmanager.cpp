@@ -18,7 +18,11 @@ DbManager::DbManager(const QString& path):customers(), inventory()
 DbManager* DbManager::getInstance()
 {
     if(db == NULL){
-        db  = new DbManager("pamphletDB.db");
+        if (QSysInfo::productType() == "osx" || QSysInfo::productType() == "macos") {
+            db  = new DbManager("../../../pamphletDB.db");
+        } else {
+            db = new DbManager("pamphletDB.db");
+        }
         return db;
     }else{
         return db;
