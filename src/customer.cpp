@@ -1,6 +1,6 @@
 #include "customer.h"
 
-Customer::Customer()
+Customer::Customer():products()
 {
     interest = LOW;
 }
@@ -13,7 +13,7 @@ Customer::Customer(const Customer & otherCustomer)
 }
 
 Customer::Customer(QString name, Interest initInterest, bool initValue, QString initStreet, QString initCity, QString initState, QString initZip) :
-    address(initStreet, initCity, initState, initZip)
+    address(initStreet, initCity, initState, initZip), products()
 {
     companyName = name;
     interest = initInterest;
@@ -97,11 +97,23 @@ void Customer::addProduct(Product item)
     /*if the item is not repeated*/
     if(!found)
         products.push_back(item);
+
 }
 
 std::vector<Product>& Customer::getProducts()
 {
     return products;
+}
+
+int Customer::getQuantityOf(QString productName)
+{
+    unsigned int i;
+    for( i=0; i<products.size();i++)
+    {
+        if(products.at(i).getName() == productName)
+            break;
+    }
+    return products.at(i).getQuantity();
 }
 
 Customer::~Customer()

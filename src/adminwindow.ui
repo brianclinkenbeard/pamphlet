@@ -18,7 +18,7 @@
     <rect>
      <x>20</x>
      <y>20</y>
-     <width>121</width>
+     <width>141</width>
      <height>31</height>
     </rect>
    </property>
@@ -45,9 +45,9 @@
   <widget class="QPushButton" name="deleteButton">
    <property name="geometry">
     <rect>
-     <x>450</x>
+     <x>530</x>
      <y>20</y>
-     <width>121</width>
+     <width>151</width>
      <height>31</height>
     </rect>
    </property>
@@ -58,9 +58,9 @@
   <widget class="QPushButton" name="addButton">
    <property name="geometry">
     <rect>
-     <x>310</x>
+     <x>370</x>
      <y>20</y>
-     <width>121</width>
+     <width>151</width>
      <height>31</height>
     </rect>
    </property>
@@ -71,22 +71,22 @@
   <widget class="QPushButton" name="transactionsButton">
    <property name="geometry">
     <rect>
-     <x>590</x>
+     <x>690</x>
      <y>20</y>
-     <width>121</width>
+     <width>151</width>
      <height>31</height>
     </rect>
    </property>
    <property name="text">
-    <string>Transactions</string>
+    <string>History of purchases</string>
    </property>
   </widget>
   <widget class="QComboBox" name="sortBox">
    <property name="geometry">
     <rect>
-     <x>880</x>
+     <x>850</x>
      <y>20</y>
-     <width>121</width>
+     <width>151</width>
      <height>31</height>
     </rect>
    </property>

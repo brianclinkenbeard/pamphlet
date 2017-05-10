@@ -3,6 +3,7 @@
 #include "dialoghelp.h"
 #include "adminlogin.h"
 #include "testimonialsdisplay.h"
+#include"displaytransaction.h"
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -68,6 +69,7 @@ void MainWindow::on_Purchase_clicked()
         if(customers.at(i).getName() == ui->lineEdit_customerName->text())
         {
             found = true;
+            userIndex = i;
             break;
         }
     }
@@ -78,26 +80,37 @@ void MainWindow::on_Purchase_clicked()
             product.setQuantity(ui->lineEdit_quantity->text().toInt());
             customers.at(i).addProduct(product);
             ui->label_errorMessage->setText("Successful purchase");
-            userIndex = i;
+            QSqlQuery qry;
+            qry.prepare("UPDATE Transactions SET "+ui->listOfProducts->currentText()+" = "+QString::number(customers.at(i).getQuantityOf(ui->listOfProducts->currentText()))+" WHERE Company = '"+customers.at(i).getName()+"'");
+            if(!qry.exec())
+                qDebug()<<"unable to exec";
         }else{
             ui->label_errorMessage->setText("Invalid quantity, you can buy 1 to 5 number of this product");
         }
     }else{
         ui->label_errorMessage->setText("Invalid customer");
     }
+    ui->lineEdit_customerName->clear();
+    ui->lineEdit_quantity->clear();
 }
 
 void MainWindow::on_DisplayPurchases_clicked()
 {
-    ui->TransactionTable->setRowCount(4);
-    ui->TransactionTable->setColumnCount(3);
-    std::vector<Customer>& customers = DbManager::getInstance()->getCustomers();//why if not ref it give the size of products 0???
-    if(userIndex != -1){
-        for(unsigned int i = 0; i < customers.at(userIndex).getProducts().size(); i++){
-          //  ui->TransactionTable->insertRow(i);
-            ui->TransactionTable->setItem(i, 0, new QTableWidgetItem(customers.at(userIndex).getProducts().at(i).getName()));
-            ui->TransactionTable->setItem(i, 1, new QTableWidgetItem(QString::number(customers.at(userIndex).getProducts().at(i).getPrice())));
-            ui->TransactionTable->setItem(i, 2, new QTableWidgetItem(QString::number(customers.at(userIndex).getProducts().at(i).getQuantity())));
+    bool found = false;
+    std::vector<Customer>& customers = DbManager::getInstance()->getCustomers();
+    for (unsigned int i =0; i<customers.size(); i++)
+    {
+        if(customers.at(i).getName() == ui->lineEdit_customerName->text())
+        {
+            userIndex = i;
+            found = true;
+            break;
         }
     }
+    if(!found){
+        ui->label_errorMessage->setText("Invalid customer");
+        return;
+    }
+    DisplayTransaction* TransactionWindow = new DisplayTransaction(userIndex);
+    TransactionWindow->show();
 }

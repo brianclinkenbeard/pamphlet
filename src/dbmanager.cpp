@@ -82,6 +82,13 @@ void DbManager::FileToDb(const QString& path)
         else{
             qDebug()<<"unable to save data to Customer_Rating";
         }
+        qry.prepare("insert into Transactions (Company,W, X, Y, Z) values('"+company+"','"+QString::number(0)+"','"+QString::number(0)+"','"+QString::number(0)+"','"+QString::number(0)+"')");
+        if(qry.exec()){
+            qDebug()<<"data saved to Customer_Rating";
+        }
+        else{
+            qDebug()<<"unable to save data to Customer_Rating";
+        }
 
     }
     inFile.flush();
@@ -92,14 +99,16 @@ void DbManager::FileToDb(const QString& path)
 void DbManager::DbToCustomers()
 {
     Customer customer;
-    Customer tempCustomer;
     QSqlQuery qry;
     QSqlQuery qry2;
+    QSqlQuery qry3;
+  //  DbToInventory();
     qry.prepare("SELECT * FROM Customer_Info");
 
     if(!qry.exec()){
         qDebug()<<"unable to execute query";
     }
+    int i =0;
     while(qry.next())
     {
         customer.setName(qry.value(0).toString());
@@ -111,15 +120,37 @@ void DbManager::DbToCustomers()
         }
         if(qry2.next())//to get the value out of query
             customer.setInterest(qry2.value(0).toString());
+        qry3.prepare("SELECT W, X, Y, Z FROM Transactions WHERE Company = '"+customer.getName()+"'");
+        if(!qry3.exec()){
+            qDebug()<<"unable to execute query";
+        }
+        Product product1;
+        Product product2;
+        Product product3;
+        Product product4;
+        if(qry3.next()){//to get the value out of query
+
+            product1 = searchInInventory("W");
+            product1.setQuantity(qry3.value(0).toInt());
+            product2 = searchInInventory("X");
+            product2.setQuantity(qry3.value(1).toInt());
+            product3 = searchInInventory("Y");
+            product3.setQuantity(qry3.value(2).toInt());
+            product4 = searchInInventory("Z");
+            product4.setQuantity(qry3.value(3).toInt());
+        }
+       /* customer.addProduct(product1);
+        customer.addProduct(product2);
+        customer.addProduct(product3);
+        customer.addProduct(product4);*///why it does not work when customer is pushed to customers by not changing the size of products???
         customers.push_back(customer);
-   /*     tempCustomer = customers.at(i);
-        qDebug()<<tempCustomer.getName();
-        qDebug()<<tempCustomer.getCustomerAddress().getCity();
-        qDebug()<<tempCustomer.getCustomerAddress().getStreet();
-        qDebug()<<tempCustomer.getCustomerAddress().getState();
-        qDebug()<<tempCustomer.getCustomerAddress().getZip();
-        qDebug()<<"key: "<<QString::number(tempCustomer.getValue());
-        qDebug()<<"interest: "<<QString::number(tempCustomer.getInterest());*/
+        (*(customers.begin()+i)).addProduct(product1);
+        (*(customers.begin()+i)).addProduct(product2);
+        (*(customers.begin()+i)).addProduct(product3);
+        (*(customers.begin()+i)).addProduct(product4);
+        qDebug()<<customers.at(i).getName();
+        qDebug()<<customers.at(i).getProducts().size();//size should be 4
+        i++;
     }
 }
 
@@ -138,16 +169,14 @@ void DbManager::DbToInventory()
         product.setPrice(qry.value(1).toDouble());
         inventory.push_back(product);
     }
-    /*
-    for(unsigned int i = 0; i<inventory.size(); i++)
-    {
-        qDebug()<<inventory.at(i).getName();
-        qDebug()<<inventory.at(i).getPrice();
-    }*/
 }
 
 std::vector<Customer>& DbManager::getCustomers()
 {
+    std::vector<Product>& p =customers.at(0).getProducts();
+    qDebug()<<customers.at(0).getName();
+    qDebug()<<p.size();
+
     return customers;
 }
 
@@ -155,6 +184,7 @@ void DbManager::CustomersToDb()
 {
     QSqlQuery qry1;
     QSqlQuery qry2;
+    QSqlQuery qry3;
     if (!customer_db.open()) {
         qDebug() << "Error: connection with database fail";
         return;
@@ -182,6 +212,8 @@ void DbManager::CustomersToDb()
 
         qry2.prepare("insert into Customer_Rating (Company, Interest) values('"+it->getName()+"', '"+interest+"')");
         qry2.exec();
+        qry3.prepare("insert into Transactions (Company,W, X, Y, Z) values('"+it->getName()+"','"+QString::number(0)+"','"+QString::number(0)+"','"+QString::number(0)+"','"+QString::number(0)+"')");
+        qry3.exec();
     }
 }
 
@@ -208,16 +240,14 @@ void DbManager::DeleteFromDb(QString name)
 {
     QSqlQuery qry1;
     QSqlQuery qry2;
+    QSqlQuery qry3;
     qry1.prepare("DELETE FROM Customer_Info WHERE Company = '"+name+"'");
     qry1.exec();
-    qDebug()<<"name in function db: "<<name;
     qry2.prepare("DELETE FROM Customer_Rating WHERE Company = '"+name+"'");
-    if(qry2.exec()){
-        qDebug()<<"data deleted from Customer_rating";
-    }
-    else{
-        qDebug()<<"unable to exec qry";
-    }
+    qry2.exec();
+    qry3.prepare("DELETE FROM Transactions WHERE Company = '"+name+"'");
+    qry3.exec();
+
 }
 
 std::vector<Product> DbManager::getInventory()
@@ -235,3 +265,4 @@ Product DbManager::searchInInventory(QString itemName)
     }
     return inventory.at(i);
 }
+

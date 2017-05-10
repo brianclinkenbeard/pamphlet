@@ -4,6 +4,7 @@
 #include <QWidget>
 #include <QTableWidgetItem>
 #include "dbmanager.h"
+#include"displaytransaction.h"
 
 namespace Ui {
 class AdminWindow;
@@ -29,6 +30,8 @@ private slots:
     void on_deleteButton_clicked();
 
     void on_addButton_clicked();
+
+    void on_transactionsButton_clicked();
 
 private:
 

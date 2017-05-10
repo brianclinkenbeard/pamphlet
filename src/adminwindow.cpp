@@ -131,3 +131,24 @@ int AdminWindow::sortBoxIndex()
 {
     return ui->sortBox->currentIndex();
 }
+
+void AdminWindow::on_transactionsButton_clicked()
+{
+    /* if nothing is selected, exit */
+    if (selected == -1) {
+        /* TODO: Dialog box? */
+        qDebug() << "Nothing is selected to delete. Please select an element.";
+        return;
+    }
+    QString name = ui->tableWidget_CustomerInfo->item(selected, 0)->text();
+    std::vector<Customer> customers = DbManager::getInstance()->getCustomers();
+    for(unsigned int i = 0; i<customers.size();i++)
+    {
+        if(customers.at(i).getName()==name){
+            DisplayTransaction* TransactionWindow = new DisplayTransaction(i);
+            TransactionWindow->show();
+            break;
+        }
+
+    }
+}

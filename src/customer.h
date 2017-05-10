@@ -24,6 +24,7 @@ public:
     bool operator <(const Customer&) const;
     bool operator >(const Customer&) const;
     void addProduct(Product item);
+    int getQuantityOf(QString productName);
     std::vector<Product>& getProducts();
     ~Customer();
 private:

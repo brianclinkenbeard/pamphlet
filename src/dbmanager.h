@@ -23,11 +23,11 @@ public:
     Product searchInInventory(QString itemName);
 
 private:
-
+    std::vector<Customer> customers;
     static DbManager* db;
     DbManager(const QString& path);
     QSqlDatabase customer_db;
-    std::vector<Customer> customers;
+
     std::vector<Product> inventory;
 };
 #endif // DBMANAGER_H
