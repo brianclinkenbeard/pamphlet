@@ -15,7 +15,8 @@ class DisplayTransaction : public QDialog
 
 public:
     explicit DisplayTransaction(QWidget *parent = 0);
-    explicit DisplayTransaction(int serIndex);
+    /** non-default constructor */
+    explicit DisplayTransaction(int serIndex); /**< index of customer */
     ~DisplayTransaction();
 
 private:

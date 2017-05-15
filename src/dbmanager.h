@@ -8,11 +8,18 @@
 #include<QTextStream>
 #include"product.h"
 
+/**
+ * @brief DB Manager
+ * Manages database and includes operations to read, write and edit the SQLite file
+ */
 class DbManager
 {
 public:
+    /** singleton */
     static DbManager* getInstance();
-    void FileToDb(const QString& path);
+    /** reads from database */
+    void FileToDb(const QString& path); /**< path to database file */
+    /** writes to customer vector from database */
     void DbToCustomers();
     void DbToInventory();
     void CustomersToDb();
