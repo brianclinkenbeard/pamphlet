@@ -77,21 +77,11 @@
   <property name="windowTitle">
    <string>Dialog</string>
   </property>
-  <widget class="QTextEdit" name="textEdit">
+  <widget class="QLabel" name="title_label">
    <property name="geometry">
     <rect>
      <x>20</x>
-     <y>50</y>
-     <width>461</width>
-     <height>171</height>
-    </rect>
-   </property>
-  </widget>
-  <widget class="QLabel" name="label">
-   <property name="geometry">
-    <rect>
-     <x>20</x>
-     <y>10</y>
+     <y>0</y>
      <width>261</width>
      <height>31</height>
     </rect>
@@ -105,7 +95,7 @@
     <string>New Testimonial</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="pushButton">
+  <widget class="QPushButton" name="submit_button">
    <property name="geometry">
     <rect>
      <x>200</x>
@@ -118,20 +108,72 @@
     <string>Submit</string>
    </property>
   </widget>
-  <widget class="QLabel" name="label_2">
+  <widget class="QLabel" name="submit_label">
    <property name="geometry">
     <rect>
      <x>180</x>
-     <y>270</y>
+     <y>271</y>
      <width>141</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QLabel" name="customer_label">
+   <property name="geometry">
+    <rect>
+     <x>23</x>
+     <y>30</y>
+     <width>461</width>
      <height>21</height>
     </rect>
    </property>
    <property name="text">
-    <string>Placeholder: &quot;Success&quot;</string>
+    <string>Customer Name</string>
    </property>
    <property name="alignment">
     <set>Qt::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="customer_edit">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>50</y>
+     <width>461</width>
+     <height>25</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLabel" name="testimonial_label">
+   <property name="geometry">
+    <rect>
+     <x>23</x>
+     <y>80</y>
+     <width>461</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Testimonial</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QPlainTextEdit" name="testimonial_textedit">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>100</y>
+     <width>461</width>
+     <height>121</height>
+    </rect>
    </property>
   </widget>
  </widget>

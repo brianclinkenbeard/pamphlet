@@ -15,6 +15,9 @@ public:
     explicit TestimonialsDisplay(QWidget *parent = 0);
     ~TestimonialsDisplay();
 
+private slots:
+    void on_submit_button_clicked();
+
 private:
     Ui::TestimonialsDisplay *ui;
 };

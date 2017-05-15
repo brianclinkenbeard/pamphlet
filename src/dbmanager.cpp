@@ -267,3 +267,25 @@ Product DbManager::searchInInventory(QString itemName)
     }
     return inventory.at(i);
 }
+
+void DbManager::addTestimonial(QString customer, QString testimonial)
+{
+    QSqlQuery qry;
+
+    if (!customer_db.open()) {
+        qDebug() << "Failed to connect with database.";
+        return;
+    }
+
+    qry.prepare("INSERT INTO Testimonials (Company, Testimonial) VALUES(:Company,:Testimonial)");
+
+    qry.bindValue(":Company", customer);
+    qry.bindValue(":Testimonial", testimonial);
+
+    qDebug() << "test";
+    if (qry.exec()) {
+        qDebug() << "Successfully executed query";
+    } else {
+        qDebug() << "Unable to execute query";
+    }
+}
