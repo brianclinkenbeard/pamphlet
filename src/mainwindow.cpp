@@ -20,6 +20,9 @@ MainWindow::MainWindow(QWidget *parent) :
     /* mailto for email label */
     ui->email_label->setOpenExternalLinks(true);
     userIndex = -1;
+
+    /* read in testimonials */
+    ui->testimonials_browser->setText(DbManager::getInstance()->getTestimonials());
 }
 
 MainWindow::~MainWindow()

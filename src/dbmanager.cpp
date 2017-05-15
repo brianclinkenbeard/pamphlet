@@ -288,3 +288,50 @@ bool DbManager::addTestimonial(QString customer, QString testimonial)
         return false;
     }
 }
+
+/**
+ * @brief DbManager::getTestimonials
+ * Returns a formatted string of testimonials.
+ * @return
+ */
+QString DbManager::getTestimonials()
+{
+    QSqlQuery qry;
+
+    /** check if database is open */
+    if (!customer_db.open()) {
+        qDebug() << "Failed to connect with database.";
+        return "Error";
+    }
+
+    QStringList testimonials;
+    QStringList companies;
+
+    qry.prepare("SELECT * FROM Testimonials");
+    qry.exec();
+
+    /** get testimonials from database */
+    int tCount;
+    while (qry.next()) {
+        companies << qry.value(0).toString();
+        testimonials << qry.value(1).toString();
+        tCount++;
+    };
+
+    QString tString;
+
+    /** format the testimonials */
+    for (int i = 0; i < tCount; ++i) {
+        /* this is a stupid way of formatting this but oh well */
+        tString.append("\"");
+        tString.append(testimonials.at(i));
+        tString.append("\"\n\t—");
+        tString.append(companies.at(i));
+        /* dont add newlines on last element */
+        if (i < tCount - 1)
+            tString.append("\n\n");
+    }
+
+    /** return the testimonial string */
+    return tString;
+}

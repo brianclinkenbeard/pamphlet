@@ -22,6 +22,7 @@ public:
     std::vector<Product> getInventory();
     Product searchInInventory(QString itemName);
     bool addTestimonial(QString, QString);
+    QString getTestimonials();
 
 private:
     std::vector<Customer> customers;
