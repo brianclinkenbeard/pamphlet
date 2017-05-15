@@ -178,8 +178,6 @@ void DbManager::DbToInventory()
 std::vector<Customer>& DbManager::getCustomers()
 {
     std::vector<Product>& p =customers.at(0).getProducts();
-    qDebug()<<customers.at(0).getName();
-    qDebug()<<p.size();
 
     return customers;
 }
