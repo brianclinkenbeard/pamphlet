@@ -21,7 +21,7 @@ public:
     bool isFirstExecution();
     std::vector<Product> getInventory();
     Product searchInInventory(QString itemName);
-    void addTestimonial(QString, QString);
+    bool addTestimonial(QString, QString);
 
 private:
     std::vector<Customer> customers;

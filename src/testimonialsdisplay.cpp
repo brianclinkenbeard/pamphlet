@@ -20,7 +20,9 @@ void TestimonialsDisplay::on_submit_button_clicked()
         ui->submit_label->setText("One or more field is empty.");
         return;
     } else {
-        DbManager::getInstance()->addTestimonial(ui->customer_edit->text(), ui->testimonial_textedit->toPlainText());
-        ui->submit_label->setText("Success");
+        if (DbManager::getInstance()->addTestimonial(ui->customer_edit->text(), ui->testimonial_textedit->toPlainText()))
+            ui->submit_label->setText("Success");
+        else
+            ui->submit_label->setText("Failed");
     }
 }

@@ -177,8 +177,6 @@ void DbManager::DbToInventory()
 
 std::vector<Customer>& DbManager::getCustomers()
 {
-    std::vector<Product>& p =customers.at(0).getProducts();
-
     return customers;
 }
 
@@ -268,13 +266,13 @@ Product DbManager::searchInInventory(QString itemName)
     return inventory.at(i);
 }
 
-void DbManager::addTestimonial(QString customer, QString testimonial)
+bool DbManager::addTestimonial(QString customer, QString testimonial)
 {
     QSqlQuery qry;
 
     if (!customer_db.open()) {
         qDebug() << "Failed to connect with database.";
-        return;
+        return false;
     }
 
     qry.prepare("INSERT INTO Testimonials (Company, Testimonial) VALUES(:Company,:Testimonial)");
@@ -285,7 +283,9 @@ void DbManager::addTestimonial(QString customer, QString testimonial)
     qDebug() << "test";
     if (qry.exec()) {
         qDebug() << "Successfully executed query";
+        return true;
     } else {
         qDebug() << "Unable to execute query";
+        return false;
     }
 }
