@@ -149,6 +149,15 @@ void AdminWindow::on_transactionsButton_clicked()
 
 void AdminWindow::on_pushButton_updateCustomer_clicked()
 {
-    UpdateCustomer* updateCustomerWindow = new UpdateCustomer(this);
+    QModelIndexList selected = ui->tableWidget_CustomerInfo->selectionModel()->selectedRows();
+
+    /* if nothing is selected, exit */
+    if (selected.isEmpty()) {
+        /* TODO: Dialog box? */
+        qDebug() << "Please select an customer.";
+        return;
+    }
+
+    UpdateCustomer* updateCustomerWindow = new UpdateCustomer(selected.at(0).row(), this);
     updateCustomerWindow->show();
 }
