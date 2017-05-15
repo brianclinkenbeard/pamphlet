@@ -1,0 +1,46 @@
+Meeting 4/5/2017
+1. Attendees:
+	a. All group members attended.
+
+2. Items covered:
+	a. Discussed the design of project, and how to implement the DB
+
+3. Outcomes:
+	a. Created basic DB in DB Browser
+	b. overall design/layout finalized
+
+	
+Meeting 4/10/2017
+1. Attendees:
+	a. All group members attended
+	
+2. Items Covered:
+	a. Discussed what will be finished by the end of sprint.
+	b. Discussed how help functionality will work.
+	
+3. Outcomes:
+	a. Reached an agreement on help options
+	b. scheduled next meeting
+	
+
+Meeting 4/29/2017
+1. Attendees: 
+	a. All group members attended
+
+2. Items Covered:
+	a. Discussed admin feautures and how to implement them with the DB.
+	b. Discussed items for next sprint
+	
+3. Outcomes:
+	a. Figured out how to update and save information inputted by admin to work with DB.
+	
+
+Meeting 5/12/2017
+1. Attendees:
+	a. All group members attended
+	
+2. Items Covered:
+	a. Discussed what needs to be finalized
+
+3. Outcomes: 
+	a. Determined what needs to be completed for final sprint.
