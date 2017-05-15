@@ -31,6 +31,8 @@ private slots:
 
     void on_transactionsButton_clicked();
 
+    void on_pushButton_updateCustomer_clicked();
+
 private:
 
     Ui::AdminWindow *ui;

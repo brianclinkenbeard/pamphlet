@@ -1,7 +1,8 @@
 #include "adminwindow.h"
 #include "ui_adminwindow.h"
 #include "mainwindow.h"
-#include"addcustomer.h"
+#include "addcustomer.h"
+#include "updatecustomer.h"
 
 AdminWindow::AdminWindow(QWidget *parent) :
     QWidget(parent),
@@ -144,4 +145,10 @@ void AdminWindow::on_transactionsButton_clicked()
         }
 
     }
+}
+
+void AdminWindow::on_pushButton_updateCustomer_clicked()
+{
+    UpdateCustomer* updateCustomerWindow = new UpdateCustomer(this);
+    updateCustomerWindow->show();
 }

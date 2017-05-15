@@ -311,7 +311,7 @@ QString DbManager::getTestimonials()
     qry.exec();
 
     /** get testimonials from database */
-    int tCount;
+    int tCount = 0;
     while (qry.next()) {
         companies << qry.value(0).toString();
         testimonials << qry.value(1).toString();

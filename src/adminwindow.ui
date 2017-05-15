@@ -45,7 +45,7 @@
   <widget class="QPushButton" name="deleteButton">
    <property name="geometry">
     <rect>
-     <x>430</x>
+     <x>360</x>
      <y>20</y>
      <width>151</width>
      <height>31</height>
@@ -58,7 +58,7 @@
   <widget class="QPushButton" name="addButton">
    <property name="geometry">
     <rect>
-     <x>270</x>
+     <x>200</x>
      <y>20</y>
      <width>151</width>
      <height>31</height>
@@ -71,7 +71,7 @@
   <widget class="QPushButton" name="transactionsButton">
    <property name="geometry">
     <rect>
-     <x>590</x>
+     <x>520</x>
      <y>20</y>
      <width>151</width>
      <height>31</height>
@@ -100,6 +100,19 @@
      <string>Key Customers</string>
     </property>
    </item>
+  </widget>
+  <widget class="QPushButton" name="pushButton_updateCustomer">
+   <property name="geometry">
+    <rect>
+     <x>680</x>
+     <y>20</y>
+     <width>141</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Update Customer</string>
+   </property>
   </widget>
  </widget>
  <resources/>

@@ -35,7 +35,8 @@ SOURCES += src/main.cpp \
     src/testimonialsdisplay.cpp \
     src/addcustomer.cpp \
     src/product.cpp \
-    src/displaytransaction.cpp
+    src/displaytransaction.cpp \
+    src/updatecustomer.cpp
 
 HEADERS  += src/mainwindow.h \
     src/dbmanager.h \
@@ -47,7 +48,8 @@ HEADERS  += src/mainwindow.h \
     src/testimonialsdisplay.h \
     src/addcustomer.h \
     src/product.h \
-    src/displaytransaction.h
+    src/displaytransaction.h \
+    src/updatecustomer.h
 
 FORMS    += src/mainwindow.ui \
     src/dialoghelp.ui \
@@ -55,7 +57,8 @@ FORMS    += src/mainwindow.ui \
     src/adminwindow.ui \
     src/testimonialsdisplay.ui \
     src/addcustomer.ui \
-    src/displaytransaction.ui
+    src/displaytransaction.ui \
+    src/updatecustomer.ui
 
 DISTFILES += \
     pamphletDB.db
