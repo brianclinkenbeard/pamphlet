@@ -65,6 +65,11 @@ UpdateCustomer::~UpdateCustomer()
     delete ui;
 }
 
+/**
+ * @brief UpdateCustomer::on_update_button_clicked()
+ * old values from customer are deleted and replaced with updated values
+ * @param name
+ */
 void UpdateCustomer::on_update_button_clicked()
 {
     DbManager::getInstance()->DeleteFromDb(name);

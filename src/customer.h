@@ -26,6 +26,7 @@ public:
     void addProduct(Product item);
     int getQuantityOf(QString productName);
     std::vector<Product>& getProducts();
+    virtual void print() {};
     ~Customer();
 private:
     QString companyName;

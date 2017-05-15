@@ -14,8 +14,12 @@ TestimonialsDisplay::~TestimonialsDisplay()
     delete ui;
 }
 
+/**
+ * @brief testimonialsdisplay::on_submit_button_clicked
+ * fill in submission fields for easy customer testimonial interaction
+ */
 void TestimonialsDisplay::on_submit_button_clicked()
-{
+{ 
     if (ui->customer_edit->text().isEmpty() || ui->testimonial_textedit->toPlainText().isEmpty()) {
         ui->submit_label->setText("One or more field is empty.");
         return;

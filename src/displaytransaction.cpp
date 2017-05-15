@@ -8,6 +8,12 @@ DisplayTransaction::DisplayTransaction(QWidget *parent) :
     ui->setupUi(this);
     userIndex = -1;
 }
+
+/**
+ * @brief displaytransaction::DisplayTransaction
+ * creates display using customer vector to view a customer's transactions of our products in a table
+ * @param UserIndex
+ */
 DisplayTransaction::DisplayTransaction(int UserIndex):
     ui(new Ui::DisplayTransaction)
 {
