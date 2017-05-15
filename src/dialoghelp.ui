@@ -39,12 +39,22 @@
    </item>
    <item>
     <property name="text">
-     <string>Service Options</string>
+     <string>Order Product</string>
     </property>
    </item>
    <item>
     <property name="text">
-     <string>Maintenance with Pricing</string>
+     <string>Request Pamphlet</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>List of Environments</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Testimonials</string>
     </property>
    </item>
   </widget>

@@ -14,6 +14,11 @@ DialogHelp::~DialogHelp()
     delete ui;
 }
 
+/**
+ * @brief DialogHelp::on_comboBox_currentIndexChanged
+ * Selects help option
+ * @param index
+ */
 void DialogHelp::on_comboBox_currentIndexChanged(int index)
 {
     QString helpInfo;
@@ -23,11 +28,21 @@ void DialogHelp::on_comboBox_currentIndexChanged(int index)
         helpInfo = "Please select an option in the context menu to view help.";
         break;
     case 1:
-        helpInfo = "[Service Options Help]";
+        /* Order a Product */
+        helpInfo = "To order a product, enter company information and select a product. If you are not already one of our "
+                   "potential customers, please first request a pamphlet. Press the order button to place your order.";
         break;
     case 2:
-        helpInfo = "[Maintenance and Pricing Help]";
+        /* Request a Pamphlet */
+        helpInfo = "To request a pamphlet, simply enter valid information and press the request a pamphlet button.";
         break;
+    case 3:
+        /* List of Environments */
+        helpInfo = "To our service options for an environment, simply select an environment from the drop down menu.";
+        break;
+     case 4:
+        /* Testimonials */
+        helpInfo = "To add a testimonial, simply enter a company name and a testimonial and press submit.";
     }
     ui->textBrowser->setText(helpInfo);
 }

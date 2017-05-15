@@ -280,7 +280,6 @@ bool DbManager::addTestimonial(QString customer, QString testimonial)
     qry.bindValue(":Company", customer);
     qry.bindValue(":Testimonial", testimonial);
 
-    qDebug() << "test";
     if (qry.exec()) {
         qDebug() << "Successfully executed query";
         return true;
