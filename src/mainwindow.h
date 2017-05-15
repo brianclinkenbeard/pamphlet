@@ -27,6 +27,8 @@ private slots:
 
     void on_Purchase_clicked();
 
+    void on_request_pamphlet_button_clicked();
+
 private:
     int userIndex;
     Ui::MainWindow *ui;

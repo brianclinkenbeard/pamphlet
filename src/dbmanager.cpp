@@ -269,4 +269,3 @@ Product DbManager::searchInInventory(QString itemName)
     }
     return inventory.at(i);
 }
-

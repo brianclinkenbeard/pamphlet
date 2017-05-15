@@ -109,3 +109,52 @@ void MainWindow::on_Purchase_clicked()
     ui->lineEdit_customerName->clear();
     ui->lineEdit_quantity->clear();
 }
+
+/**
+ * @brief MainWindow::on_request_pamphlet_button_clicked
+ * Adds customers who request a pamphlet to a database for persistence.
+ */
+void MainWindow::on_request_pamphlet_button_clicked()
+{
+    /* DBCustomers variable should be reference since getCustomer returns by reference */
+    std::vector<Customer>& DBCustomers = DbManager::getInstance()->getCustomers();
+    Customer customer;
+
+    /* check if company name is empty before checking for repetition */
+    if (ui->company_edit->text().isEmpty()) {
+        ui->request_label->setText("One or more required field is empty");
+        return;
+    } else {
+        customer.setName(ui->company_edit->text());
+    }
+
+    /* check if customer is not repeated */
+    for (unsigned int i = 0; i< DBCustomers.size(); i++)
+    {
+        if (DBCustomers[i].getName().toLower()==ui->company_edit->text().toLower()){
+            ui->request_label->setText("Customer already exists");
+            return;
+        }
+    }
+
+    /* check if required field is empty */
+    if (customer.getName().isEmpty() || ui->address_edit->text().isEmpty() || ui->city_edit->text().isEmpty() || ui->state_edit->text().isEmpty() || ui->zip_edit->text().isEmpty()) {
+        ui->request_label->setText("One or more required field is empty");
+        return;
+    } else {
+        customer.setCustomerAddress(ui->address_edit->text(), ui->city_edit->text(), ui->state_edit->text(), ui->zip_edit->text());
+    }
+
+    /* not key and medium interest by default */
+    customer.setValue(0);
+    customer.setInterest(MEDIUM);
+
+    DBCustomers.push_back(customer);
+
+    ui->company_edit->clear();
+    ui->address_edit->clear();
+    ui->city_edit->clear();
+    ui->state_edit->clear();
+    ui->zip_edit->clear();
+    ui->request_label->setText("Success");
+}
