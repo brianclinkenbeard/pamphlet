@@ -16,6 +16,10 @@ public:
     ~TestimonialsDisplay();
 
 private slots:
+    /**
+     * @brief on_submit_button_clicked
+     * fill in submission fields for easy customer testimonial interaction
+     */
     void on_submit_button_clicked();
 
 private:
